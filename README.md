@@ -53,5 +53,8 @@ Notes and links useful for DevOps Engineer
     * Ticket Volume 
     * Bug Bounce Percentage 
     * Unplanned Work Percentage 
+* Azure Boards is a tool in Azure DevOps to help teams plan the work that needs to be done. 
+* Agile Manifesto states - responding to change comes before following a plan
+* A sprint is a fixed amount of time a team has to complete a set of tasks
 
 ## AWS Learning Library
