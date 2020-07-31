@@ -56,5 +56,7 @@ Notes and links useful for DevOps Engineer
 * Azure Boards is a tool in Azure DevOps to help teams plan the work that needs to be done. 
 * Agile Manifesto states - responding to change comes before following a plan
 * A sprint is a fixed amount of time a team has to complete a set of tasks
+* Delivery Plans is an extension for Azure DevOps that helps organizations plan and review work schedules across multiple teams. It's a visualization of one or more work schedules against a calendar backdrop.
+* Creating a delivery plan can be valuable at any point in a project.
 
 ## AWS Learning Library
