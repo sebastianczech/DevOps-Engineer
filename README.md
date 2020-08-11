@@ -58,6 +58,20 @@ Notes and links useful for DevOps Engineer
 * A sprint is a fixed amount of time a team has to complete a set of tasks
 * Delivery Plans is an extension for Azure DevOps that helps organizations plan and review work schedules across multiple teams. It's a visualization of one or more work schedules against a calendar backdrop.
 * Creating a delivery plan can be valuable at any point in a project.
+* **Azure Pipelines** is a cloud service that you can use to automatically build, test, and deploy your code project.
+* Continuous integration (CI) is the process of automating the build and testing of code every time a team member commits changes to version control. 
+* A pipeline defines the continuous integration process for the app. It's made up of steps called tasks. The pipeline runs when you submit code changes.
+* A build agent builds or deploys the code. When your build or deployment runs, the system begins one or more jobs. An agent is installable software that runs one build or deployment job at a time. 
+* The final product of the pipeline is a build artifact.
+* Instead of managing each agent individually, you can organize agents into agent pools. An agent pool defines the sharing boundary for all agents in that pool. 
+* Service endpoints are a way for Azure DevOps to connect to external systems or services. They are a bundle of securely stored properties that includes but is not limited to:
+  * Service name
+  * Description
+  * Server URL
+  * Certificates or tokens
+  * User names and passwords
+* Pipeline as code refers to the concept of expressing your build definitions as code. 
+* A template enables you to define common build tasks one time and reuse those tasks multiple times. You call a template from the parent pipeline as a build step. You can pass parameters into a template from the parent pipeline.
 
 ### [Deploy Academy](https://deployacademy.pl/)
 
