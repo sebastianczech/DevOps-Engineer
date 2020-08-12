@@ -87,7 +87,15 @@ Notes and links useful for DevOps Engineer
   * Commit files to your branch:	``git commit``
   * Download a branch from a remote repository:	``git pull``
   * Upload a branch to a remote repository:	``git push``
-
+* Origin specifies your repository on GitHub. When you fork code from another repository, it's common to name the original remote (the one you forked from) as upstream.
+* By default, a build is triggered when a change is pushed to any file on any branch.
+* A continuous integration (CI) build is a build that runs when you push a change to a branch.
+* A pull request (PR) build is a build that runs when you open a pull request or when you push additional changes to an existing pull request.
+* PR builds help you verify that your proposed changes will work correctly after they're merged to master or another target branch. The final CI build verifies that the changes are still good after the PR was merged.
+* [Catalog of refactorings](https://refactoring.com/catalog/)
+* [Trunk based development](https://trunkbaseddevelopment.com/)
+* [The Complete CI/CD Collection](https://dzone.com/articles/the-complete-cicd-collection-tutorials)
+  
 ### [Deploy Academy](https://deployacademy.pl/)
 
 * Maturity Model CD
