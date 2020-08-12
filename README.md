@@ -72,6 +72,21 @@ Notes and links useful for DevOps Engineer
   * User names and passwords
 * Pipeline as code refers to the concept of expressing your build definitions as code. 
 * A template enables you to define common build tasks one time and reuse those tasks multiple times. You call a template from the parent pipeline as a build step. You can pass parameters into a template from the parent pipeline.
+*  Version control system:
+   * centralized (e.g. Team Foundation Version Control (TFVC))
+   * distributed (e.g. GIT)
+* Clone is your local copy of a repository
+* Branching - where you can maintain as many copies as you want and merge back only the one you want to keep. Main branch, or trunk, is typically called master
+* When your code is ready to be merged into the master branch in the main repository that's shared by all developers, you create what's called a pull request. When you create a pull request, you're telling the other developers that you have code ready to review and you want it merged into the master branch. When your pull request is approved, it becomes part of the master codebase.
+* Git commands:
+  * Create a Git repository:	``git init``
+  * Download a remote repository:	``git clone``
+  * Create a branch:	``git checkout``
+  * See which files have been changed:	``git status``
+  * Stage files to commit:	``git add``
+  * Commit files to your branch:	``git commit``
+  * Download a branch from a remote repository:	``git pull``
+  * Upload a branch to a remote repository:	``git push``
 
 ### [Deploy Academy](https://deployacademy.pl/)
 
