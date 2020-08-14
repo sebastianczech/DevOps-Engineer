@@ -92,10 +92,7 @@ Notes and links useful for DevOps Engineer
 * A continuous integration (CI) build is a build that runs when you push a change to a branch.
 * A pull request (PR) build is a build that runs when you open a pull request or when you push additional changes to an existing pull request.
 * PR builds help you verify that your proposed changes will work correctly after they're merged to master or another target branch. The final CI build verifies that the changes are still good after the PR was merged.
-* [Catalog of refactorings](https://refactoring.com/catalog/)
-* [Trunk based development](https://trunkbaseddevelopment.com/)
-* [The Complete CI/CD Collection](https://dzone.com/articles/the-complete-cicd-collection-tutorials)
-  
+
 ### [Deploy Academy](https://deployacademy.pl/)
 
 * Maturity Model CD
@@ -129,4 +126,17 @@ Notes and links useful for DevOps Engineer
 * Green Blue
 * Canary Deployment 
 
+mail z prezentacjiami
+
 ## AWS Learning Library
+
+## Other materials
+
+* [Catalog of refactorings](https://refactoring.com/catalog/)
+* [Trunk based development](https://trunkbaseddevelopment.com/)
+* [The Complete CI/CD Collection](https://dzone.com/articles/the-complete-cicd-collection-tutorials)
+* [Beautiful Builds by Roy Osherove](https://www.slideshare.net/royosherove/beautiful-builds-by-roy-osherove)  
+* [Pipeline Driven Organization](https://pipelinedriven.org/)
+* [TIP - together we build](https://telecominfraproject.com/together-we-build-growing-new-ecosystems-and-accelerating-deployments/)
+* [Badges](https://docs.gitlab.com/ee/user/project/badges.html)
+* [Octopus Deploy - repeatable, reliable deployments](https://octopus.com/)
