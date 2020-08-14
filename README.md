@@ -58,6 +58,9 @@ Notes and links useful for DevOps Engineer
 * A sprint is a fixed amount of time a team has to complete a set of tasks
 * Delivery Plans is an extension for Azure DevOps that helps organizations plan and review work schedules across multiple teams. It's a visualization of one or more work schedules against a calendar backdrop.
 * Creating a delivery plan can be valuable at any point in a project.
+
+### [Build applications with Azure DevOps learning path](https://docs.microsoft.com/en-us/learn/paths/build-applications-with-azure-devops/)
+
 * **Azure Pipelines** is a cloud service that you can use to automatically build, test, and deploy your code project.
 * Continuous integration (CI) is the process of automating the build and testing of code every time a team member commits changes to version control. 
 * A pipeline defines the continuous integration process for the app. It's made up of steps called tasks. The pipeline runs when you submit code changes.
@@ -92,8 +95,34 @@ Notes and links useful for DevOps Engineer
 * A continuous integration (CI) build is a build that runs when you push a change to a branch.
 * A pull request (PR) build is a build that runs when you open a pull request or when you push additional changes to an existing pull request.
 * PR builds help you verify that your proposed changes will work correctly after they're merged to master or another target branch. The final CI build verifies that the changes are still good after the PR was merged.
+* ...
 
-### [Deploy Academy](https://deployacademy.pl/)
+## [Beautiful Builds and Continuous Delivery Patterns](https://courses.osherove.com/courses/2796/lectures/54700)
+
+* Automatic build != Continuous integration
+  * what to do vs. when to do it
+  * build scripts vs. CI server
+  * build scripts: Maven, Rake, Ant
+  * CI server: Jenkins, TeamCity, Circle CI, Travis CI
+  * build scripts: knowledge about source structure (development)
+  * CI server: knowledge about environment (operations)
+  * application code vs. ops configurations
+  * build scripts: versioned in source control
+  * CI server: versioned seperately
+* CI server + build scripts = not a good idea
+* Coupling *Application Source Structure* to *Operations Knowledge* forces you to change *operational configurations* on simple applicative source changes (e.g. chaning name of folder, which is containting tests)
+* Coupling *Operations Knowledge* to *Application Source Control* forces you to change *application source* and check in on simple operational changes (e.g. changing IP address of FTP server to store built app - in this case in script use environment variable and on CI server set value for this environment variable) 
+* Continuous delivery - why ?
+  * how long before you:
+    * compile ?
+      * continuously
+    * test ?
+      * continuously
+    * deploy ?
+      * continuously
+* ...
+
+## [Deploy Academy](https://deployacademy.pl/)
 
 * Maturity Model CD
 * Build pipeline:
@@ -129,6 +158,8 @@ Notes and links useful for DevOps Engineer
 mail z prezentacjiami
 
 ## AWS Learning Library
+
+* ...
 
 ## Other materials
 
