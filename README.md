@@ -171,3 +171,4 @@ mail z prezentacjiami
 * [TIP - together we build](https://telecominfraproject.com/together-we-build-growing-new-ecosystems-and-accelerating-deployments/)
 * [Badges](https://docs.gitlab.com/ee/user/project/badges.html)
 * [Octopus Deploy - repeatable, reliable deployments](https://octopus.com/)
+* [CI/CD Patterns](https://continuousdelivery.com/implementing/patterns/)
