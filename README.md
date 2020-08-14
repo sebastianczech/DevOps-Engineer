@@ -114,6 +114,8 @@ Notes and links useful for DevOps Engineer
 
 ## [Beautiful Builds and Continuous Delivery Patterns](https://courses.osherove.com/courses/2796/lectures/54700)
 
+* [Beautiful Builds - Roy Osherove](https://vimeo.com/94193986)
+* [Kim van Wilgen - Continuously delivering continuous delivery](https://vimeo.com/240521820)
 * Automatic build != Continuous integration
   * what to do vs. when to do it
   * build scripts vs. CI server
@@ -167,10 +169,9 @@ Notes and links useful for DevOps Engineer
 * Continuous Deployment
 * Downtime
 * Rollback
-* Green Blue
-* Canary Deployment 
-
-mail z prezentacjiami
+* [Green Blue](https://martinfowler.com/bliki/BlueGreenDeployment.html)
+* [Canary Deployment](https://octopus.com/docs/deployment-patterns/canary-deployments)
+* [Jerzy Wickowski - CI/CD Co to? Po co? Jak?](https://jerzywickowski.pl/prelekcje/cicd-co-to-po-co-jak/)
 
 ## AWS Learning Library
 
