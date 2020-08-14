@@ -188,3 +188,5 @@ Notes and links useful for DevOps Engineer
 * [Badges](https://docs.gitlab.com/ee/user/project/badges.html)
 * [Octopus Deploy - repeatable, reliable deployments](https://octopus.com/)
 * [CI/CD Patterns](https://continuousdelivery.com/implementing/patterns/)
+* [Periodic Tableof DevOps Tools](https://digital.ai/periodic-table-of-devops-tools)
+* [DevOps Roadmap](https://roadmap.sh/devops)
