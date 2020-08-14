@@ -95,6 +95,21 @@ Notes and links useful for DevOps Engineer
 * A continuous integration (CI) build is a build that runs when you push a change to a branch.
 * A pull request (PR) build is a build that runs when you open a pull request or when you push additional changes to an existing pull request.
 * PR builds help you verify that your proposed changes will work correctly after they're merged to master or another target branch. The final CI build verifies that the changes are still good after the PR was merged.
+* Badge - it's important for members of the team to know the status of the build. An easy way to quickly determine the build status is to add a build badge to the README.md file on GitHub. A badge is part of Microsoft Azure Pipelines. It has methods you can use to add an SVG image that shows the status of the build on your GitHub repository. Most GitHub repositories include a file named README.md, which is a Markdown file that includes essential details and documentation about your project. GitHub renders this file on your project's home page.
+* Dashboard is a customizable area in Azure DevOps where you can add widgets and extensions to help you visualize areas of your DevOps solution. 
+* [Git](https://git-scm.com/)
+* [GitHub Desktop](https://desktop.github.com/)
+* [Understanding the GitHub flow](https://guides.github.com/introduction/flow/)
+* [A successful Git branching model](https://nvie.com/posts/a-successful-git-branching-model/)
+* [How to Split Pull Requests – Good Practices, Methods and Git Strategies](https://www.thedroidsonroids.com/blog/splitting-pull-request)
+* [How to Write a Git Commit Message](https://chris.beams.io/posts/git-commit/)
+* [Specify events that trigger pipelines](https://docs.microsoft.com/en-us/azure/devops/pipelines/build/triggers?view=azure-devops&tabs=yaml)
+* Branch strategies:
+  * Feature Branch Workflow
+  * Gitflow Workflow
+  * Forking Branch Workflow
+* Branch policies help you to protect your important Git branches. Policies enforce your team's code quality and change management standards. Some examples of the policies you can configure include: the minimum number of reviewers, checking for linked work items, checking for comment resolution, enforcing a merge strategy, and checking for build validation.
+* Pull request strategies - add additional conditions to your pull requests to enforce a higher level of code quality in your key branches. A clean build of the merged code and approval from multiple reviewers are some extra requirements you can set to protect your key branches
 * ...
 
 ## [Beautiful Builds and Continuous Delivery Patterns](https://courses.osherove.com/courses/2796/lectures/54700)
