@@ -219,3 +219,4 @@ Notes and links useful for DevOps Engineer
 * [CI/CD Patterns](https://continuousdelivery.com/implementing/patterns/)
 * [Periodic Tableof DevOps Tools](https://digital.ai/periodic-table-of-devops-tools)
 * [DevOps Roadmap](https://roadmap.sh/devops)
+* [Oh Shit, Git!?!](https://ohshitgit.com/)
