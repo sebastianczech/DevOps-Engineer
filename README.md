@@ -154,6 +154,23 @@ Notes and links useful for DevOps Engineer
     * deploy to test servers
     * deploy to staging servers
     * deploy to production
+* Triggers and Waves of confidence:  
+  * Build configurations - back to coding quickly:
+    * 10 CI
+    * 20 integration test
+    * 30 deploy to test with smoke test
+    * 40 deploy to staging with acceptance test
+  * Build chain triggers:
+    * after CI start deploy to test
+    * after deploy to test start deploy to staging
+    * after deploy to staging start deploy to production
+  * triggering
+    * time
+    * build finished
+    * check in
+    * API request
+    * retry 
+* ...
 
 ## [Deploy Academy](https://deployacademy.pl/)
 
