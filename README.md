@@ -170,6 +170,11 @@ Notes and links useful for DevOps Engineer
     * check in
     * API request
     * retry 
+* Slow builds:
+  * in many pipelines we are repeating the same things (checkout, compile, unit tests, deploy)
+  * if we build something, the use artifacts repository to not build it one more time
+  * pattern: cumulative, fast builds - artifact dependencies
+  * don't repeat yourself, build it once and store in articacts repository
 * ...
 
 ## [Deploy Academy](https://deployacademy.pl/)
