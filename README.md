@@ -137,7 +137,23 @@ Notes and links useful for DevOps Engineer
       * continuously
     * deploy ?
       * continuously
-* ...
+* Pattern - *shipping skeleton*:
+  * created on *walking skeleton* - tiny implementation of the system that performs a small end-to-end function. It should link together the main architectural components. Architecture and functionality can then evolve in parallel.
+  * shipping skeleton is a combination of 2 elements:
+    * a skeleton of application
+    * a shipping system for the skeleton
+  * tactic - start a project by creating a fully automated build and production deploy path for the simplest piece of code you can
+  * machines:
+    * build machine
+    * test machine
+    * staging machine
+    * production machine
+  * build configurations:
+    * continuous integration build
+    * slow build
+    * deploy to test servers
+    * deploy to staging servers
+    * deploy to production
 
 ## [Deploy Academy](https://deployacademy.pl/)
 
