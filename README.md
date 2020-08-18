@@ -110,6 +110,16 @@ Notes and links useful for DevOps Engineer
   * Forking Branch Workflow
 * Branch policies help you to protect your important Git branches. Policies enforce your team's code quality and change management standards. Some examples of the policies you can configure include: the minimum number of reviewers, checking for linked work items, checking for comment resolution, enforcing a merge strategy, and checking for build validation.
 * Pull request strategies - add additional conditions to your pull requests to enforce a higher level of code quality in your key branches. A clean build of the merged code and approval from multiple reviewers are some extra requirements you can set to protect your key branches
+* Automated tests - documentation and the ability to more easily refactor your code are two added benefits of automated testing.
+* Test pyramid
+* Continuous testing means tests are run early in the development process and as every change moves through the pipeline. 
+* Shifting left means considering software quality and testing earlier in the development process.
+* What makes a good test?
+  * Don't test for the sake of testing
+  * Keep your tests short
+  * Ensure that your tests are repeatable
+  * Keep your tests focused
+  * Choose the right granularity
 * ...
 
 ## [Beautiful Builds and Continuous Delivery Patterns](https://courses.osherove.com/courses/2796/lectures/54700)
