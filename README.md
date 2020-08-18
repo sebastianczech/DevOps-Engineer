@@ -175,6 +175,17 @@ Notes and links useful for DevOps Engineer
   * if we build something, the use artifacts repository to not build it one more time
   * pattern: cumulative, fast builds - artifact dependencies
   * don't repeat yourself, build it once and store in articacts repository
+* Solving versioning with Snapshot Dependencies
+  * component depends from other components
+    * artifacts are uploaded to repository if the build is successful
+    * versioning issues
+    * if build 1.0.1 is ok, but 1.0.2 is failed, we cannot use latest version of component
+    * solution - snapshot dependencies
+      * do not use specific version
+      * use tag e.g. latest (for this one which was last successful built)
+  * workinh snapshots are skipped
+    * no time wasting repeating ourselves
+    * build when needed (code check in)
 * ...
 
 ## [Deploy Academy](https://deployacademy.pl/)
