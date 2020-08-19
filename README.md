@@ -196,7 +196,34 @@ Notes and links useful for DevOps Engineer
   * workinh snapshots are skipped
     * no time wasting repeating ourselves
     * build when needed (code check in)
+* Many components developed by seperated teams:
+  * own CI, Unit Test and Integration Test
+  * where do we get the artifacts from, for each component ? 
+    * convention is very important
+    * pattern: tipping point (publishable binaries) 
+* Speeding Up Inter Team Dependencies: API Artifacts
+  * contracts for other modules
+* Imaginvative world:
+  * test env. -> stating env. -> production env.
+* Real world
+  * test env. -> stating env.  |  production env.
+    * use Isolated Deploy Machine (e.g. FTP / shared folder), from which there is scheduled deploy from folder (some kind of proxy)
+* Parallel Firehose
+  * besides test, stage and production env., there is dev-test and dev-staging env.
+  * automated sync on requests / schedule between e.g. dev-test env. and test env.
 * ...
+* CI/CD:
+  * component 1,2,3,...,N:
+    * 05 - public API
+    * 10 - CI
+    * 20 - unit test
+    * 30 - integration test
+    * 40 - TIP
+  * deploy chain:
+    * 10 - system integration
+    * 20 - deploy to test
+    * 30 - deploy to staging
+    * 40 - deploy to production
 
 ## [Deploy Academy](https://deployacademy.pl/)
 
