@@ -120,6 +120,17 @@ Notes and links useful for DevOps Engineer
   * Ensure that your tests are repeatable
   * Keep your tests focused
   * Choose the right granularity
+* Security and license ratings in open-source software:
+  * [Black Duck](https://www.blackducksoftware.com/) - Black Duck  by Synopsys scans your open-source dependencies against their own database. They keep that database up-to-date with the latest vulnerabilities and give you timely information on fixes, workarounds, and on the exploits. They cover over 80 programming languages, and get their information from many sources.
+  * [GitLab](https://about.gitlab.com/) - GitLab  is a CI/CD pipeline tool that enables you to scan the dependencies in code that comes from GitLab repositories. It supports JavaScript, Ruby, Python, PHP, and Java. Their Azure Pipelines extension  enables you to add a GitLab repository as a source.
+  * [Sonatype Nexus](https://www.sonatype.com/nexus-repository-sonatype) - Sonatype Nexus  scans your dependencies for known vulnerabilities, licenses, and old or unsupported components. Their Azure Pipelines extension  enables you to upload your artifacts to Sonatype Nexus for scanning.
+  * [Veracode](https://www.veracode.com/) - Veracode  is a code scanning tool that integrates with Azure Pipelines to help you find vulnerabilities early in the development process. Their Azure Pipelines extension  stops the build process if there's a severe security risk and gives you guidance on finding and fixing the vulnerability.
+  * [WhiteSource Bolt](https://bolt.whitesourcesoftware.com/) - WhiteSource Bolt  is a tool for scanning open-source dependencies for vulnerabilities and licensing. It supports more than 200 programming languages and gives guidance on fixing the vulnerabilities. There are reports for vulnerabilities, licensing, and inventory. Their Azure Pipelines extension  allows for extensive policy configuration as well as viewing the results from the Azure Pipelines portal.
+* [What is a public project?](https://docs.microsoft.com/en-us/azure/devops/organizations/public/about-public-projects?view=azure-devops)
+* [Quickstart: Change the project visibility, public or private](https://docs.microsoft.com/en-us/azure/devops/organizations/public/make-project-public?view=azure-devops)
+* [Setting repository visibility](https://help.github.com/github/administering-a-repository/setting-repository-visibility)
+* [Pipeline - specify conditions](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/conditions?view=azure-devops&tabs=yaml)
+* [Security Content Automation Protocol - SCAP](https://csrc.nist.gov/projects/security-content-automation-protocol)
 * ...
 
 ## [Beautiful Builds and Continuous Delivery Patterns](https://courses.osherove.com/courses/2796/lectures/54700)
@@ -261,6 +272,70 @@ Notes and links useful for DevOps Engineer
 
 ## AWS Learning Library
 
+* Best practices of Running Web application in Cloud:
+  * Tools:
+    * EC2 (server)
+    * Elastic Beanstalk (PaaS)
+    * EKS (Kubernetes)
+    * ECS (Containers)
+    * S3 (Static Site)
+    * Amplify (PaaS for Static Pages)
+  * Elastic Beanstalk:
+    * runs on EC2 host
+    * manages:
+      * OS
+      * language interpreter
+      * application server
+      * HTTP server
+  * Amplify:
+    * idea:
+      * develop
+      * test
+      * deploy/host
+      * measure
+  * Security - network is important - VPC (virtual private cloud):
+    * do not put all components (web server, app server, db server) in public network
+    * app and db in private network, web server in public network with security group
+    * the best solution - load balancer in public, the rest (web, app, db) in private network
+    * use jump host to connect to db or app server or the best to use system manager
+  * Scalability is important:
+    * Auto Scalling is available in many services
+  * Speed:
+    * Global Accelerator
+      * from nearest POP packets are send in private AWS network
+    * CDN (content delivery network)
+      * CloudFront
+  * Threats:
+    * examples:
+      * DDOS (distributed denial of service)
+      * bad bots
+      * app vulnerabilities
+    * tools:
+      * Shield Standard (default enabled)
+      * Shield Advanced
+      * WAF (web app firewall)
+  * AI & MI - examples of services:
+    * Polly (to read something)
+    * Translate
+    * Fraud Detector
+    * Personalize
+  * Databases:
+    * RDS (relational database systems)
+    * Key-value
+    * Document
+    * Graph
+    * In-memory
+    * Time-series
+    * Ledger
+  * Microservices
+    * each microservices should have his own database, but it will costs too much for RDS
+    * DynamoDB is free or cost not too much
+  * Cache
+    * ElasticCache (Redis, memcache)
+  * Continous integration / delivery / deployment
+    * CodePipeline
+  * Marketing
+    * Pinpoint (SMS, mail, voice)
 * ...
 
 ## Other materials
