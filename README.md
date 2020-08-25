@@ -222,6 +222,29 @@ Notes and links useful for DevOps Engineer
 * Parallel Firehose
   * besides test, stage and production env., there is dev-test and dev-staging env.
   * automated sync on requests / schedule between e.g. dev-test env. and test env.
+* Branching strategies:
+  * Continous Delivery Strategy:
+    * get feedback as quickly as possible
+      * get rid of humans in the loop, automate as much as possible
+    * as close to customer as possible (production / staging)
+      * try to deploy to production as much as possible
+  * Feedback levels:
+    * compiler
+    * test
+    * environmental (permissions, performance, ...) - staging and prod
+    * customer (user)
+  * Common branching reasons:
+    * promote (move code to more important environment)
+      * branch per environment (promotions)
+        * WIP (working in progress) branch (test env.)
+        * MAIN branch (staing env.)
+        * PROD branch (staging + production env.)
+      * lots of human work (merging)
+      * feedback not so fast (only from test env.)
+    * create new release
+    * create a new feature safely
+    * create a new isolated component of the system
+    * run on a different platform
 * ...
 * CI/CD:
   * component 1,2,3,...,N:
