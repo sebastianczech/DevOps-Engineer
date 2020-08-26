@@ -235,17 +235,45 @@ Notes and links useful for DevOps Engineer
     * customer (user)
   * Common branching reasons:
     * promote (move code to more important environment)
-      * branch per environment (promotions)
-        * WIP (working in progress) branch (test env.)
-        * MAIN branch (staing env.)
-        * PROD branch (staging + production env.)
-      * lots of human work (merging)
-      * feedback not so fast (only from test env.)
     * create new release
     * create a new feature safely
     * create a new isolated component of the system
     * run on a different platform
-* ...
+  * Strategy 1 - branch per environment (promotions)
+    * branches:
+      * WIP (working in progress) branch (test env.)
+      * MAIN branch (staing env.)
+      * PROD branch (staging + production env.)
+    * lots of human work (merging)
+    * feedback not so fast (only from test env.)
+  * Strategy 2 - single trunk (no branches, no merging)
+    * only WIP or MAIN branch
+    * on release:
+      * release branch ?
+      * tag ?
+    * continouse deployment without release branches:
+      * no parallel fire hose (test, stage and prod. env.)
+      * with parallel fire hose ( + dev test, + dev stage)
+  * Strategy 3 - release branches (dev overlap problem)
+    * in the moment of release new branch is created
+    * it's good with paraller fire hose, whene release branches are deployed to test, stage, prod and main branch is deployed on dev test, dev stage
+  * Strategy 4 - single branch with [feature flags](https://www.martinfowler.com/articles/feature-toggles.html)
+    * feature flags are created while starting working on feature. it's removed after it's deployed on production.
+    * feature flags are temporary.
+    * common uses:
+      * hide partial feature from showing in production (dev)
+        * enable continous delivery without branching
+      * enable feature for certain class of customer or on some kind of environment (business)
+    * [feature toggle frameworks list](https://pipelinedriven.org/feature-toggle-frameworks-list)
+    * practices:
+      * remove flag as soon as possible
+      * no nested flags
+      * use flags at entry points (single point of contact)
+        * usually in UI
+      * favor polymorphism (strategy pattern) over condolidations
+        * to make code more maintainable
+* TeamCity
+  * ...
 * CI/CD:
   * component 1,2,3,...,N:
     * 05 - public API
