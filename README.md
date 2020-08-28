@@ -273,7 +273,6 @@ Notes and links useful for DevOps Engineer
       * favor polymorphism (strategy pattern) over condolidations
         * to make code more maintainable
 * TeamCity
-  * ...
 * CI/CD:
   * component 1,2,3,...,N:
     * 05 - public API
