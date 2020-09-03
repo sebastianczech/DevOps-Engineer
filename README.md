@@ -386,6 +386,70 @@ Notes and links useful for DevOps Engineer
     * CodePipeline
   * Marketing
     * Pinpoint (SMS, mail, voice)
+* AWS Kubernetes:
+  * Control Plane (Kubernetes master nodes), Data Plane (worker nodes, minions)
+  * Options:
+    * DIY (do it yourself) - Kops, Kubeadm (hard way)
+    * Manager Service - [EKS (Elastic Kubernetes Service)](https://aws.amazon.com/eks/)
+      * Worker nodes:
+        * Servers on EC2
+        * Managed Groups on EC2
+        * [Fargate (serverless)](https://aws.amazon.com/fargate/)
+  * [eksctl](https://eksctl.io/) - official CLI for Amazon EKS
+  * [CDK for Kubernetes](https://cdk8s.io/) - define Kubernetes apps and components using familiar languages
+  * [Visual Studio Code from command line](https://code.visualstudio.com/docs/setup/mac)
+  * K8s basics:
+    * Pod, deployment, service, load-balancer, namespace
+    * Ingress - more advanced load balancer
+    * Scaling:
+      * [HPA - Horizontal Pod Autoscaler](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/)
+      * [Cluster Autoscaler](https://github.com/kubernetes/autoscaler/tree/master/cluster-autoscaler)
+      * [VPA - Vertical Pod Autoscaler](https://cloud.google.com/kubernetes-engine/docs/concepts/verticalpodautoscaler)
+  * [AWS Cloud Map](https://aws.amazon.com/cloud-map/) - service discovery for cloud resources. Registry contains:
+    * namespace
+    * service
+    * service instance
+  * Server-side service discovery patterns:
+    * connections are proxied
+    * discovery is abstracted way
+    * availability and capacity impact
+    * additional latency
+  * Client-side service discovery patterns:
+    * clients connect directly to providers
+    * fewer components in the system
+    * clients must be registry-aware
+    * client-side load balancing
+  * Service registers:
+    * etcd
+    * zookeeper
+    * eureka
+    * doozerd
+    * skydns
+  * [Kubernetes ExternalDNS](https://github.com/kubernetes-sigs/external-dns)
+  * [AWS App Mesh](https://aws.amazon.com/app-mesh/) - application-level networking for all your services - uses [Envoy](https://www.envoyproxy.io/)
+  * Service mesh options:
+    * in-process code (sdk) (monitoring, routing, discovery, deployment)
+    * out-of-process (sidecar proxy) (pod = miscroservice as container + proxy as container)
+    * [sidecar proxy vs. libraries or app code](https://dzone.com/articles/comparing-service-mesh-architectures)
+  * Observability:
+    * AWS CloudWatch
+    * AWS X-Ray
+    * [Prometheus](https://prometheus.io/)
+    * [Datadog](https://www.datadoghq.com/)
+  * Client-side traffic management:
+    * traffic shaping
+      * service discovery
+      * retries 
+      * timeouts
+      * circuit breakers
+      * health checks
+    * routing controls
+      * protocols support
+      * header based
+      * cookie based
+      * path based
+      * host based
+  * [Amazon EKS Workshop](https://www.eksworkshop.com/)
 * ...
 
 ## Other materials
