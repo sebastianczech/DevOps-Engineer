@@ -131,6 +131,25 @@ Notes and links useful for DevOps Engineer
 * [Setting repository visibility](https://help.github.com/github/administering-a-repository/setting-repository-visibility)
 * [Pipeline - specify conditions](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/conditions?view=azure-devops&tabs=yaml)
 * [Security Content Automation Protocol - SCAP](https://csrc.nist.gov/projects/security-content-automation-protocol)
+* [Semantic Versioning](https://semver.org/)
+* [Deep dive into Azure Artifacts](https://azure.microsoft.com/blog/deep-dive-into-azure-artifacts/)
+* Elements of a dependency management strateg - A good dependency management strategy depends on these three elements:
+  * Standardization - Standardizing how you declare and resolve dependencies will help your automated release process remain repeatable and predictable.
+  * Packaging formats and sources - Each dependency should be packaged using the applicable format and stored in a central location.
+  * Versioning - You need to keep track of the changes that occur over time in dependencies just as you do with your own code. This means that dependencies should be versioned.
+* Identify dependencies:
+  * Duplicate code.
+  * High cohesion and low coupling.
+  * Individual lifecycle.
+  * Stable parts.
+  * Independent code and components.
+* Feeds in Azure Artifacts have three different views by default. These views are added at the moment a new feed is created. The three views are:
+  * Release. The @release view contains all packages that are considered official releases.
+  * Prerelease. The @prerelease view contains all packages that have a label in their version number.
+  * Local. The @local view contains all release and prerelease packages as well as the packages downloaded from upstream sources.
+* Feeds have four levels of access: Owners, Contributors, Collaborators, and Readers. 
+* [Secure and share packages using feed permissions](https://docs.microsoft.com/en-us/azure/devops/artifacts/feeds/feed-permissions?view=azure-devops%3Fazure-portal%3Dtrue)
+* [Scan open source components for vulnerabilities and license ratings in Azure Pipelines ](https://docs.microsoft.com/en-us/learn/modules/scan-open-source/)
 * ...
 
 ## [Beautiful Builds and Continuous Delivery Patterns](https://courses.osherove.com/courses/2796/lectures/54700)
