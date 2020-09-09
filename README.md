@@ -150,7 +150,121 @@ Notes and links useful for DevOps Engineer
 * Feeds have four levels of access: Owners, Contributors, Collaborators, and Readers. 
 * [Secure and share packages using feed permissions](https://docs.microsoft.com/en-us/azure/devops/artifacts/feeds/feed-permissions?view=azure-devops%3Fazure-portal%3Dtrue)
 * [Scan open source components for vulnerabilities and license ratings in Azure Pipelines ](https://docs.microsoft.com/en-us/learn/modules/scan-open-source/)
-* ...
+* A build agent is a system that performs build tasks. Think of it as a dedicated server that runs your build process.
+* Create build agent:  
+```bash
+az vm create \
+    --name MyLinuxAgent \
+    --resource-group learn-5f28c898-610f-4894-b849-9b4955ea129c \
+    --image Canonical:UbuntuServer:18.04-LTS:latest \
+    --location eastus \
+    --size Standard_DS2_v2 \
+    --admin-username azureuser \
+    --generate-ssh-keys
+
+IPADDRESS=$(az vm show \
+  --name MyLinuxAgent \
+  --resource-group learn-5f28c898-610f-4894-b849-9b4955ea129c \
+  --show-details \
+  --query [publicIps] \
+  --output tsv)
+```
+* Create build tools script:
+```bash
+#!/bin/bash
+set -e
+
+# Select a default .NET version if one is not specified
+if [ -z "$DOTNET_VERSION" ]; then
+  DOTNET_VERSION=3.1.300
+fi
+
+# Add the Node.js PPA so that we can install the latest version
+curl -sL https://deb.nodesource.com/setup_14.x | bash -
+
+# Install Node.js, npm, and jq
+apt-get install -y nodejs npm jq
+
+# Install gulp
+npm install -g gulp
+
+# Change ownership of the .npm directory to the sudo (non-root) user
+chown -R $SUDO_USER ~/.npm
+
+# Install .NET as the sudo (non-root) user
+sudo -i -u $SUDO_USER bash << EOF
+curl -sSL https://dot.net/v1/dotnet-install.sh | bash /dev/stdin -c Current -v $DOTNET_VERSION
+EOF
+```
+* Create build agent script:
+```bash
+#!/bin/bash
+set -e
+
+# Select a default agent version if one is not specified
+if [ -z "$AZP_AGENT_VERSION" ]; then
+  AZP_AGENT_VERSION=2.164.1
+fi
+
+# Verify Azure Pipelines token is set
+if [ -z "$AZP_TOKEN" ]; then
+  echo 1>&2 "error: missing AZP_TOKEN environment variable"
+  exit 1
+fi
+
+# Verify Azure DevOps URL is set
+if [ -z "$AZP_URL" ]; then
+  echo 1>&2 "error: missing AZP_URL environment variable"
+  exit 1
+fi
+
+# If a working directory was specified, create that directory
+if [ -n "$AZP_WORK" ]; then
+  mkdir -p "$AZP_WORK"
+fi
+
+# Create the Downloads directory under the user's home directory
+if [ -n "$HOME/Downloads" ]; then
+  mkdir -p "$HOME/Downloads"
+fi
+
+# Download the agent package
+curl https://vstsagentpackage.azureedge.net/agent/$AZP_AGENT_VERSION/vsts-agent-linux-x64-$AZP_AGENT_VERSION.tar.gz > $HOME/Downloads/vsts-agent-linux-x64-$AZP_AGENT_VERSION.tar.gz
+
+# Create the working directory for the agent service to run jobs under
+if [ -n "$AZP_WORK" ]; then
+  mkdir -p "$AZP_WORK"
+fi
+
+# Create a working directory to extract the agent package to
+mkdir -p $HOME/azp/agent
+
+# Move to the working directory
+cd $HOME/azp/agent
+
+# Extract the agent package to the working directory
+tar zxvf $HOME/Downloads/vsts-agent-linux-x64-$AZP_AGENT_VERSION.tar.gz
+
+# Install the agent software
+./bin/installdependencies.sh
+
+# Configure the agent as the sudo (non-root) user
+chown $SUDO_USER $HOME/azp/agent
+sudo -u $SUDO_USER ./config.sh --unattended \
+  --agent "${AZP_AGENT_NAME:-$(hostname)}" \
+  --url "$AZP_URL" \
+  --auth PAT \
+  --token "$AZP_TOKEN" \
+  --pool "${AZP_POOL:-Default}" \
+  --work "${AZP_WORK:-_work}" \
+  --replace \
+  --acceptTeeEula
+
+# Install and start the agent service
+./svc.sh install
+./svc.sh start
+```
+
 
 ## [Beautiful Builds and Continuous Delivery Patterns](https://courses.osherove.com/courses/2796/lectures/54700)
 
