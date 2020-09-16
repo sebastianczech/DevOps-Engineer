@@ -636,4 +636,7 @@ sudo -u $SUDO_USER ./config.sh --unattended \
 * [CI/CD Patterns](https://continuousdelivery.com/implementing/patterns/)
 * [Periodic Tableof DevOps Tools](https://digital.ai/periodic-table-of-devops-tools)
 * [DevOps Roadmap](https://roadmap.sh/devops)
+* [Developer Roadmap](https://github.com/kamranahmedse/developer-roadmap)
 * [Oh Shit, Git!?!](https://ohshitgit.com/)
+* [Lens | The Kubernetes IDE](https://github.com/lensapp/lens)
+* [Cloud Design Patterns](https://docs.microsoft.com/en-us/azure/architecture/patterns/)
