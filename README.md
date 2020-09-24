@@ -640,3 +640,4 @@ sudo -u $SUDO_USER ./config.sh --unattended \
 * [Oh Shit, Git!?!](https://ohshitgit.com/)
 * [Lens | The Kubernetes IDE](https://github.com/lensapp/lens)
 * [Cloud Design Patterns](https://docs.microsoft.com/en-us/azure/architecture/patterns/)
+* [The Difference Between a Reverse Proxy and a Forward Proxy](https://smartproxy.com/blog/the-difference-between-a-reverse-proxy-and-a-forward-proxy)
