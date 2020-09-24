@@ -641,3 +641,8 @@ sudo -u $SUDO_USER ./config.sh --unattended \
 * [Lens | The Kubernetes IDE](https://github.com/lensapp/lens)
 * [Cloud Design Patterns](https://docs.microsoft.com/en-us/azure/architecture/patterns/)
 * [The Difference Between a Reverse Proxy and a Forward Proxy](https://smartproxy.com/blog/the-difference-between-a-reverse-proxy-and-a-forward-proxy)
+  * [Traefik](https://doc.traefik.io/traefik/)
+  * [Caddy](https://caddyserver.com/docs/quick-starts/reverse-proxy)
+  * [Nginx](https://www.nginx.com/resources/glossary/reverse-proxy-server/)
+  * [Haproxy](http://www.haproxy.org/)
+  * [Envoy](https://www.envoyproxy.io/)
