@@ -275,7 +275,9 @@ sudo -u $SUDO_USER ./config.sh --unattended \
 * [Pool (YAML schema)](https://docs.microsoft.com/en-us/azure/devops/pipelines/yaml-schema?view=azure-devops&tabs=schema#pool)
 * [Create a multi-platform pipeline](https://docs.microsoft.com/en-us/azure/devops/pipelines/get-started-multiplatform?view=azure-devops)
 
-## [Beautiful Builds and Continuous Delivery Patterns](https://courses.osherove.com/courses/2796/lectures/54700)
+## CI/CD
+
+### [Beautiful Builds and Continuous Delivery Patterns](https://courses.osherove.com/courses/2796/lectures/54700)
 
 * [Beautiful Builds - Roy Osherove](https://vimeo.com/94193986)
 * [Kim van Wilgen - Continuously delivering continuous delivery](https://vimeo.com/240521820)
@@ -428,7 +430,7 @@ sudo -u $SUDO_USER ./config.sh --unattended \
     * 30 - deploy to staging
     * 40 - deploy to production
 
-## [Deploy Academy](https://deployacademy.pl/)
+### [Deploy Academy](https://deployacademy.pl/)
 
 * Maturity Model CD
 * Build pipeline:
@@ -592,7 +594,17 @@ sudo -u $SUDO_USER ./config.sh --unattended \
       * path based
       * host based
   * [Amazon EKS Workshop](https://www.eksworkshop.com/)
-* ...
+
+## Kubernetes
+
+### Kubernetes po polsku
+
+* [Kubernetes po polsku - video](https://www.youtube.com/playlist?list=PLC2hWv6J_iIzt3140dXL-Ts31Owodl7lB)
+* [Kubernetes po polsku - description](https://cloudowski.com/kubernetes-po-polsku/)
+* [Kubernetes po polsku - GitHub](https://github.com/cloudowski/kubernetes-po-polsku)
+* [Kubernetes Objects Map - map](https://kubemap.dev/)
+* [Kubernetes Objects Map - GitHub](https://github.com/cloudowski/kubemap)
+* [Kubernetes Documentation](https://kubernetes.io/docs/home/)
 
 ## Other materials
 
