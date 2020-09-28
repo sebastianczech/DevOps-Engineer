@@ -606,6 +606,22 @@ sudo -u $SUDO_USER ./config.sh --unattended \
 * [Kubernetes Objects Map - GitHub](https://github.com/cloudowski/kubemap)
 * [Kubernetes Documentation](https://kubernetes.io/docs/home/)
 
+#### s01e01: Minikube
+
+```bash
+kubectl version --client
+kubectl version
+
+minikube start
+minikube ssh
+minikube dashboard
+
+kubectl get pod
+kubectl get pod -w
+
+kubectl port-forward pod/NAME_OF_APP PORT_EXTERNAL:POD_WORKING_APP
+```
+
 ## Other materials
 
 * [The Roadmap to Becoming a DevOps Professional — From Server to Serverless](https://jobsfordevops.com/blog/how-to-become-a-devops-engineer/)
