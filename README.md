@@ -635,10 +635,34 @@ kubelet manages pod
 ```bash
 kubectl create -f POD_DEFINITION.yaml
 kubectl get pod
+kubectl get pod -w
 kubectl describe pod POD_NAME
 kubectl logs -f -c CONTAINER_IN_POD_NAME POD_NAME
 kubectl exec -it POD_NAME sh
 kubectl edit pod POD_NAME
+```
+
+#### s01e03: Skalowanie
+
+* [ReplicaSet](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/) - using labels create N pods (N = replicas)
+
+```bash
+kubectl apply -f REPLICA_SET.yaml
+kubectl scale rs NAME_OF_RS --replicas=5
+kubectl get replicaset -w
+kubectl get pod -LNAME_OF_LABEL # -Lapp
+kubectl delete rs NAME_OF_RS
+kubectl get pod -w
+```
+
+* [Horizontal Pod Autoscaler](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/)
+
+```
+kubectl autoscale rs NAME_OF_RS --max=6 --cpu-percent=20
+kubectl get hpa
+kubectl get pod 
+kubectl exec -it POD_NAME sh
+dd if=/dev/zero of=/dev/null &
 ```
 
 ## Other materials
