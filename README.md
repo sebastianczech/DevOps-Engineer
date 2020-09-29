@@ -622,6 +622,25 @@ kubectl get pod -w
 kubectl port-forward pod/NAME_OF_APP PORT_EXTERNAL:POD_WORKING_APP
 ```
 
+#### s01e02: Pody
+
+pod = container 1 + ... + container N + network namespace + IPC namespace
+
+pod is:
+* idempotent
+* ephemeral
+
+kubelet manages pod
+
+```bash
+kubectl create -f POD_DEFINITION.yaml
+kubectl get pod
+kubectl describe pod POD_NAME
+kubectl logs -f -c CONTAINER_IN_POD_NAME POD_NAME
+kubectl exec -it POD_NAME sh
+kubectl edit pod POD_NAME
+```
+
 ## Other materials
 
 * [The Roadmap to Becoming a DevOps Professional — From Server to Serverless](https://jobsfordevops.com/blog/how-to-become-a-devops-engineer/)
