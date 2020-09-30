@@ -665,6 +665,105 @@ kubectl exec -it POD_NAME sh
 dd if=/dev/zero of=/dev/null &
 ```
 
+#### s01e04: Usługi
+
+* default service ``kubernetes``
+* service types:
+  * ClusterIP (available internally in cluster)
+  * NodePort (1 dedicated port on all nodes)
+  * LoadBalancer (classic load balancer with DNS name)
+  * ExternalName (reference to other DNS name)
+* service -> N pods (with labels e.g. app=frontend)
+* DNS names is always associated with service: servicename.projname(namespace).clustername
+
+```bash
+kubectl run NAME --image=IMAGE_NAME -ti --rm -- sh
+   apk update
+   apk add curl
+kubectl get svc
+kubectl describe svc SERVICENAME
+```
+
+#### s01e05
+
+```bash
+```
+
+#### s01e06
+
+```bash
+```
+
+#### s01e07
+
+```bash
+```
+
+#### s01e08
+
+```bash
+```
+
+#### s01e09
+
+```bash
+```
+
+#### s01e10
+
+```bash
+```
+
+#### s01e11
+
+```bash
+```
+
+#### s01e12
+
+```bash
+```
+
+#### s02e01
+
+```bash
+```
+
+#### s02e02
+
+```bash
+```
+
+#### s02e03
+
+```bash
+```
+
+#### s02e04
+
+```bash
+```
+
+#### s02e05
+
+```bash
+```
+
+#### s02e06
+
+```bash
+```
+
+#### s02e07
+
+```bash
+```
+
+#### s02e08
+
+```bash
+```
+
 ## Other materials
 
 * [The Roadmap to Becoming a DevOps Professional — From Server to Serverless](https://jobsfordevops.com/blog/how-to-become-a-devops-engineer/)
