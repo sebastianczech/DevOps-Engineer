@@ -684,9 +684,21 @@ kubectl get svc
 kubectl describe svc SERVICENAME
 ```
 
-#### s01e05
+#### s01e05 - Ingress
+
+* ingress - for HTTP/HTTPS
+  * can modify e.g. headers
+  * one of the most popular implementation is based on nginx
+* HTTP traffic -> ingress -> service with clusterIP -> replica set -> pod
+* [A simple HTTP Request & Response Service](https://httpbin.org/#/Auth)
+* [Dead simple wildcard DNS for any IP Address](https://nip.io/)
 
 ```bash
+minikube addons list
+minikube addons enable ingress
+
+kubectl appply -f SVC.yml -f REPLICASET.yml
+kubectl annotate ingress INGRESSNAME nginx.ingress.kubernetes.io/auth-url=https://httpbin.org/basic-auth/rick/Morty
 ```
 
 #### s01e06
