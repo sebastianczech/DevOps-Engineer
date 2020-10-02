@@ -600,8 +600,8 @@ sudo -u $SUDO_USER ./config.sh --unattended \
 ### Kubernetes po polsku
 
 * [Kubernetes po polsku - video](https://www.youtube.com/playlist?list=PLC2hWv6J_iIzt3140dXL-Ts31Owodl7lB)
-* [Kubernetes po polsku - description](https://cloudowski.com/kubernetes-po-polsku/)
 * [Kubernetes po polsku - GitHub](https://github.com/cloudowski/kubernetes-po-polsku)
+* [Kubernetes po polsku - description](https://cloudowski.com/kubernetes-po-polsku/)
 * [Kubernetes Objects Map - map](https://kubemap.dev/)
 * [Kubernetes Objects Map - GitHub](https://github.com/cloudowski/kubemap)
 * [Kubernetes Documentation](https://kubernetes.io/docs/home/)
@@ -701,9 +701,21 @@ kubectl appply -f SVC.yml -f REPLICASET.yml
 kubectl annotate ingress INGRESSNAME nginx.ingress.kubernetes.io/auth-url=https://httpbin.org/basic-auth/rick/Morty
 ```
 
-#### s01e06
+#### s01e06 - Deployment
+
+* deploymeny is using internally replica set
+* deployment with rolling update
+  * when there is update, new replica set is creating with new version of app
+  * after new pod is started in replica set, the old one is stopped
+* special configuration for deployment - ``readinessProbe``
 
 ```bash
+kubectl get deploy
+kubectl scale deploy/NAME_OF_DEPLOY --replicas=8
+kubectl set image deploy/NAME_OF_DEPLOY NAME_OF_APP=IMAGE:VERSION --record
+kubectl rollout status deploy/NAME_OF_DEPLOY
+kubectl rollout history deploy/NAME_OF_DEPLOY
+kubectl rollout undo deploy/fussy
 ```
 
 #### s01e07
