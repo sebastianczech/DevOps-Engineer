@@ -718,9 +718,21 @@ kubectl rollout history deploy/NAME_OF_DEPLOY
 kubectl rollout undo deploy/fussy
 ```
 
-#### s01e07
+#### s01e07 - ConfigMap
+
+* ConfigMap:
+  * as environment variables
+  * as volumes (typical files, because ConfigMap can stores files, not only key-value pairs) 
+* [stern - tail multiple pods](https://github.com/wercker/stern)
 
 ```bash
+kubectl apply -f CONFIGMAP.yml
+
+# force deployment
+kubectl patch deployment DEPLOYMANET_NAME -p "{\"spec\":{\"template\":{\"metadata\":{\"labels\":{\"date\":\"`date +'%s'`\"}}}}}"
+
+# create map from file
+kubectl create configmap CONFIGMAP_FILENAME --from-file=FILENAME
 ```
 
 #### s01e08
