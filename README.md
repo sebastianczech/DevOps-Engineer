@@ -735,9 +735,24 @@ kubectl patch deployment DEPLOYMANET_NAME -p "{\"spec\":{\"template\":{\"metadat
 kubectl create configmap CONFIGMAP_FILENAME --from-file=FILENAME
 ```
 
-#### s01e08
+#### s01e08 - Namespace
+
+* namespace is used for grouping objects
+* default namespaces: ``default``, ``kube-public``, ``kube-system``
+* context (``~/.kube/config``):
+  * cluster
+  * namespace
+  * user
 
 ```bash
+kubectl get ns
+kubectl create namespace NAME
+kubectl apply -f FOLDER -n NAMESPACE-NAME
+kubectl get pod -n NAMESPACE-NAME
+kubectl get ing -n NAMESPACE-NAME
+kubectl delete ns NAMESPACE-NAME
+
+kubens NAMESPACE-NAME
 ```
 
 #### s01e09
