@@ -743,6 +743,7 @@ kubectl create configmap CONFIGMAP_FILENAME --from-file=FILENAME
   * cluster
   * namespace
   * user
+* [kubectx + kubens: Power tools for kubectl](https://github.com/ahmetb/kubectx)
 
 ```bash
 kubectl get ns
@@ -867,3 +868,4 @@ kubens NAMESPACE-NAME
   * [Nginx](https://www.nginx.com/resources/glossary/reverse-proxy-server/)
   * [Haproxy](http://www.haproxy.org/)
   * [Envoy](https://www.envoyproxy.io/)
+* [Awesome-Kubernetes](https://github.com/ramitsurana/awesome-kubernetes)
