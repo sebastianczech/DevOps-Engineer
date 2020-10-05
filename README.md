@@ -756,9 +756,33 @@ kubectl delete ns NAMESPACE-NAME
 kubens NAMESPACE-NAME
 ```
 
-#### s01e09
+#### s01e09 - [Helm](https://helm.sh/)
+
+* [Helm](https://github.com/helm/helm)
+* Helm <> Helm Charts <> Helm repository
+* Chart is in ``tar.gz`` format of packages, which contains YAML files with e.g. services, secrets etc.
+* Client-server architecture:
+  * Helm ic CLI client
+  * Tiller (server) is running in ``kube-system`` namespace
+* [Helm Charts](https://github.com/helm/charts)
+* [Discover & launch great Kubernetes-ready apps](https://hub.kubeapps.com/)
+* [Gitea](https://gitea.io/en-us/)
+* [Gogs](https://gogs.io/)
 
 ```bash
+helm init
+helm version
+
+kubectl get pod -n kube-system
+
+helm repo list
+helm install REPO_NAME/APP_NAME
+
+helm repo add incubator https://kubernetes-charts-incubator.storage.googleapis.com/
+helm install incubator/APP_NAME -n APP_RELEASE_NAME -f CONFIGURATION_FILE
+
+helm ls
+helm delete --purge APP_RELEASE_NAME
 ```
 
 #### s01e10
