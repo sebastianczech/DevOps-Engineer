@@ -785,9 +785,25 @@ helm ls
 helm delete --purge APP_RELEASE_NAME
 ```
 
-#### s01e10
+#### s01e10 - Helm Charts
 
 ```bash
+helm create CHART-NAME
+
+helm init # install Tiller
+helm install CHART-NAME
+
+helm install stable/chartmuseum -f chartmuseum-values.yaml
+helm repo add REPO_NAME http://charts.192.168.99.100.nip.io/
+helm repo list
+
+helm plugin install https://github.com/chartmuseum/helm-push
+helm push --insecure FOLDER_WITH_CHART REPO_NAME
+
+helm search FOLDER_WITH_CHART
+helm repo update
+
+helm install REPO_NAME/FOLDER_WITH_CHART -f config.yaml
 ```
 
 #### s01e11
