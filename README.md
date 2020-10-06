@@ -806,9 +806,26 @@ helm repo update
 helm install REPO_NAME/FOLDER_WITH_CHART -f config.yaml
 ```
 
-#### s01e11
+#### s01e11 - AWS EKS
+
+* [Amazon Elastic Kubernetes Service](https://aws.amazon.com/eks/)
+* [Getting started with Amazon EKS](https://docs.aws.amazon.com/eks/latest/userguide/getting-started.html)
+* [Tutorial: Deploy the Kubernetes Dashboard (web UI)](https://docs.aws.amazon.com/eks/latest/userguide/dashboard-tutorial.html)
+* ``kubectl`` ---> Amazon EKS, ``eksctl`` ---> AWS
+* [eksctl](https://eksctl.io/)
+* [kops - Kubernetes Operations](https://github.com/kubernetes/kops)
+* [KubeOps](http://www.kubernative.net/en/products/kubeops)
 
 ```bash
+# Create cluster
+eksctl create cluster -n K8S_CLUSTER_NAME -t t2.large -N 2 -v4
+
+# Configure EKS
+https://github.com/cloudowski/kubernetes-po-polsku/blob/master/sezon-1/11-eks/configure.sh
+
+# K8s dashboard
+pkill kubectl
+kubectl proxy &
 ```
 
 #### s01e12
