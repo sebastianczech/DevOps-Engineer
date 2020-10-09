@@ -828,15 +828,42 @@ pkill kubectl
 kubectl proxy &
 ```
 
-#### s01e12
+#### s01e12 - [Volumes](https://kubernetes.io/docs/concepts/storage/volumes/)
+
+* 1 method:
+  * POD = CONTAINER (/data) + VOLUME
+  * Volume plugins:
+    * AWS EBS
+    * NFS
+    * iSCSI
+    * HostPath
+    * ConfigMap
+* 2 method:
+  * POD = CONTAINER (/data) + PVC ([PersitentVolumeClain](https://kubernetes.io/docs/concepts/storage/persistent-volumes/))
+  * PVC:
+    * StorageClass
+    * static pool: PV, PV, ...
+    * dynamic pool: PV
+  * Persistent Volume plugins:
+    * NFS
+    * CephFS
+    * Cinder
+    * AWSElastic BlackStore
+    * AzureDisk
+    * Vsphere Volume
+    * GCE Persistent Disk
+    * iSCSI
+* PVC are in namespace, PV are global
 
 ```bash
+kubectl get pv
+kubectl get pvc
+
+minikube ssh
+ls -la /volumes
 ```
 
-#### s02e01
-
-```bash
-```
+#### s02e01 - Intro
 
 #### s02e02
 
