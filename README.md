@@ -865,9 +865,27 @@ ls -la /volumes
 
 #### s02e01 - Intro
 
-#### s02e02
+#### s02e02 - [Minishift](https://www.okd.io/minishift/)
+
+* [10 most important differences between OpenShift and Kubernetes](https://cloudowski.com/articles/10-differences-between-openshift-and-kubernetes/)
+* minishift -> hypervisior -> minishift VM <- oc / kubectl
+* minishift project is like a namespace
+* [oc - OpenShift Client CLI](https://github.com/openshift/origin/releases)
 
 ```bash
+minishift start
+minishift console
+
+oc login URL_OC --token=***
+oc get pod
+
+oc login -u system:admin
+oc adm policy add-scc-to-user anyuid -z default
+oc adm policy add-cluster-role-to-user cluster-admin developer
+
+oc new-app --docker-image=nginx:latest --name=mynginx
+oc expose svc/mynginx
+oc create route edge mynginxtls --service=mynginx
 ```
 
 #### s02e03
