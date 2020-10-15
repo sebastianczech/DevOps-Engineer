@@ -918,6 +918,18 @@ oc create route edge mynginxtls --service=mynginx
 ```bash
 ```
 
+## Docker tools
+
+* [GitHub codespaces](https://github.com/features/codespaces)
+* [Visual Studio Code Remote Development](https://code.visualstudio.com/docs/remote/remote-overview)
+* [Docker context](https://docs.docker.com/engine/reference/commandline/context_use/)
+* [Deploying Docker containers on ECS](https://docs.docker.com/engine/context/ecs-integration/)
+* [Harbor - cloud native repository](https://goharbor.io/)
+* [Podman](https://podman.io/)
+* [Docker in Docker - DIND](https://hub.docker.com/_/docker)
+* [Open Container Initiative - OCI](https://opencontainers.org/)
+* [From Docker to OCI: What is a container?](https://www.padok.fr/en/blog/container-docker-oci)
+
 ## Other materials
 
 * [The Roadmap to Becoming a DevOps Professional — From Server to Serverless](https://jobsfordevops.com/blog/how-to-become-a-devops-engineer/)
