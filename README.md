@@ -863,9 +863,7 @@ minikube ssh
 ls -la /volumes
 ```
 
-#### s02e01 - Intro
-
-#### s02e02 - [Minishift](https://www.okd.io/minishift/)
+#### s02e01 - [Minishift](https://www.okd.io/minishift/)
 
 * [10 most important differences between OpenShift and Kubernetes](https://cloudowski.com/articles/10-differences-between-openshift-and-kubernetes/)
 * minishift -> hypervisior -> minishift VM <- oc / kubectl
@@ -886,6 +884,31 @@ oc adm policy add-cluster-role-to-user cluster-admin developer
 oc new-app --docker-image=nginx:latest --name=mynginx
 oc expose svc/mynginx
 oc create route edge mynginxtls --service=mynginx
+```
+
+#### s02e02 - Efektywna praca na wielu środowiskach
+
+* file ``.kube/config``:
+  * context = cluster + namespace + user
+  * current-context
+* [k9ss](https://k9ss.io/)
+
+```bash
+minikube start 
+minikube start -p CUSTOM_CLASTER_USER_NAME
+
+kubectl config 
+kubectl config view --minify
+kubectl config current-context
+kubectl config get-contexts
+kubectl config use-context CONTEXT_NAME
+
+kubectx
+
+kubectl --kubeconfig=/tmp/NEW-CONFIG.yaml get node
+export KUBECONFIG=/tmp/NEW-CONFIG.yaml
+
+k9s
 ```
 
 #### s02e03
