@@ -911,32 +911,69 @@ export KUBECONFIG=/tmp/NEW-CONFIG.yaml
 k9s
 ```
 
-#### s02e03
+#### s02e03 - Porównanie Ingress i Service (część 1/2)
+
+* service - types:
+  * ClusterIP = Cluster IP + DNS name
+  * NodePort = Cluster IP + DNS name + port on each node
+  * LoadBalancer = Cluster IP + DNS name + port on each node + LB configuration
+* load balancer is working on L4 (transport)
+* ingress is working on L7 (application)
+* service - network flow:
+  * load balancer -> N x nodes -> P x pods (LoadBalancer -> NodePort -> ClusterIP)
+* ingress - network flow:
+  * load balancer -> N x nodes -> I x ingress pods -> P x app pods (LoadBalancer -> NodePort -> ClusterIP -> Ingress)
+
+```bash
+minikube status
+minikube addons list
+minikube addons enable ingress
+
+kubectl create ns NAME_OF_NAMESPACE
+
+kubens NAME_OF_NAMESPACE
+
+kubectl run DEPLOY_NAME --image=IMANGE_NAME
+kubectl get deploy
+kubectl get pod
+kubectl expose deploment DEPLOY_NAME --type=NodePort --target-port=2368 --port=80 --name=SERVICE_NAME_NP
+kubectl expose deploment DEPLOY_NAME --type=LoadBalancer --target-port=2368 --port=80 --name=SERVICE_NAME_LB
+kubectl expose deploment DEPLOY_NAME --type=ClusterIP --target-port=2368 --port=80 --name=SERVICE_NAME_CI
+kubectl get svc
+kubectl get svc -w
+kubectl scale deploy/DEPLY_NAME --replicas=3
+
+minikube tunnel
+minikube ip
+
+kubectl run --rm -ti NAME --generator=run-pod/v1 --image=IMANGE_NAME
+
+dig SERVICE_NAME.svc.cluster.local
+
+kubectl delete ns NAME_OF_NAMESPACE
+```
+
+#### s02e04 - Porównanie Ingress i Service (część 2/2)
 
 ```bash
 ```
 
-#### s02e04
+#### s02e05 - Operatory
 
 ```bash
 ```
 
-#### s02e05
+#### s02e06 - [CI/CD na Kubernetes](https://www.youtube.com/watch?v=R8CaY_SyJjo)
 
 ```bash
 ```
 
-#### s02e06
+#### s02e07 - Helm
 
 ```bash
 ```
 
-#### s02e07
-
-```bash
-```
-
-#### s02e08
+#### s02e08 - Integracja z HashiCorp Vault
 
 ```bash
 ```
