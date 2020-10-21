@@ -1046,8 +1046,8 @@ kubectl view-secret SECRET_NAME
 
 #### s02e08 - Integracja z HashiCorp Vault
 
-```bash
-```
+* [Vault Helm Chart](https://github.com/hashicorp/vault-helm )
+* [Integrate a Kubernetes Cluster with an External Vault](https://learn.hashicorp.com/tutorials/vault/kubernetes-external-vault)
 
 ## Docker tools
 
