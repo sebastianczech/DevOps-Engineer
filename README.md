@@ -1018,12 +1018,30 @@ ls -la /backup/kubedb/demo/mydb/...
 
 #### s02e06 - [CI/CD na Kubernetes](https://www.youtube.com/watch?v=R8CaY_SyJjo)
 
+* [How to build CI/CD pipelines on Kubernetes](https://cloudowski.com/articles/how-to-build-cicd-pipelines-on-kubernetes-copy/)
+
 ```bash
 ```
 
 #### s02e07 - Helm
 
+* Helm 2:
+  * CLI client
+  * Tiller server -> K8s API server -> RS, POD, ...
+  * Charts in repository
+* Helm 3:
+  * CLI client -> K8s API server -> RS, POD, ...
+  * Charts in repository
+  * other differences:
+    * no ``helm repo list``
+    * decentralization of repositories, no ``stable`` and ``incubator``
+    * namespaced installation, not globally in tiller
+    * better security 
+    * direct K8s API communication
+    * while deleting, default options is ``--purge``
+
 ```bash
+kubectl view-secret SECRET_NAME
 ```
 
 #### s02e08 - Integracja z HashiCorp Vault
