@@ -976,7 +976,44 @@ helm install stable/nginx-ingress --name nginx-ingress --set controller.publishS
 
 #### s02e05 - Operatory
 
+* [Kubernetes Database](https://github.com/kubedb/cli)
+* [Run production-grade databases easily on Kubernetes](https://kubedb.com/)
+* [CRD - Custom Resource Definitions](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/) - extending K8s API
+* Kubernetes Controller:
+  * Customer Resource ---create---> K8s API ---store---> etcd (database)
+  * Controller ---watch---> K8s API
+  * Resources ---compare---> Controller ---reconcile---> Resources (Reconcile loop)
+* Operator - intelligent controller :)
+* [Jump Start Using the Operator-SDK](https://operatorhub.io/getting-started)
+
 ```bash
+minikube start --memory=5000
+
+kubectl api-resources
+
+kubectl apply -f CRD_DEFINITION.yaml
+kubectl get crd
+
+curl -fsSL https://raw.githubusercontent.com/kubedb/cli/0.12.0/hack/deploy/kubedb.sh | bash
+
+kubectl create ns demo
+kubectl create -f https://raw.githubusercontent.com/kubedb/cli/0.12.0/docs/examples/mysql/quickstart/demo-1.yaml
+
+DBUSER=$(kubectl get secret mydb-auth -o jsonpath='{.data.username}'|base64 --decode)
+DBPASS=$(kubectl get secret mydb-auth -o jsonpath='{.data.password}'|base64 --decode)
+
+GHOST_HOST=ghost.$(minikube ip).nip.io
+
+helm install stable/ghost --values=ghost-values.yaml --name=ghost-kubedb \
+    --set externalDatabase.user="$DBUSER" \
+    --set externalDatabase.password="$DBPASS" \
+    --set ghostHost=$GHOST_HOST \
+    --set ingress.hosts[0].name=$GHOST_HOST
+
+echo http://$GHOST_HOST
+
+minikube ssh
+ls -la /backup/kubedb/demo/mydb/...
 ```
 
 #### s02e06 - [CI/CD na Kubernetes](https://www.youtube.com/watch?v=R8CaY_SyJjo)
