@@ -923,6 +923,7 @@ k9s
   * load balancer -> N x nodes -> P x pods (LoadBalancer -> NodePort -> ClusterIP)
 * ingress - network flow:
   * load balancer -> N x nodes -> I x ingress pods -> P x app pods (LoadBalancer -> NodePort -> ClusterIP -> Ingress)
+* ingress is using HTTP ``host`` header
 
 ```bash
 minikube status
@@ -955,7 +956,22 @@ kubectl delete ns NAME_OF_NAMESPACE
 
 #### s02e04 - Porównanie Ingress i Service (część 2/2)
 
+| **Feature** | **Service** | **Ingress** |
+|-|-|-|
+| Purpose | load balancing of any service | load balancing of HTTP services |
+| Exposes external service | only LoadBalancer (and partially NodePort) | YES |
+| Supports encpryption | NO | YES |
+| Allows path-based routing (HTTP) | NO | YES |
+| Requires DNS domain | NO | YES |
+| Supports TCP and UDP services | YES | NO |
+| Requires additional configuration | NO | YES (installation of ingress controller) |
+
+
 ```bash
+kubectl -n kube-system create serviceaccount tiller
+kubectl create clusterrolebinding tiller --clusterrole cluster-admin --serviceaccount=kube-system:tiller
+helm init --service-account tiller
+helm install stable/nginx-ingress --name nginx-ingress --set controller.publishService.enabled=true
 ```
 
 #### s02e05 - Operatory
