@@ -1078,6 +1078,80 @@ kubectl view-secret SECRET_NAME
 * [Vault Helm Chart](https://github.com/hashicorp/vault-helm )
 * [Integrate a Kubernetes Cluster with an External Vault](https://learn.hashicorp.com/tutorials/vault/kubernetes-external-vault)
 
+## [Continuous Delivery: Reliable Software Releases through Build, Test, and Deployment Automation - Jez Humble](https://continuousdelivery.com/)
+
+* Deployment pipeline:
+  * commit stage
+    * compile
+    * unit tests
+    * analysis
+    * build installers
+  * automated acceptance testing
+  * automated capacity testing
+  * manual testing
+  * release
+* Antipattern:
+  * deploying software manually
+  * deploying to a production-like environment only after development is complete
+  * manual configuration management of production environments
+* Achieve our goal:
+  * every change should trigger the feedback process
+  * the feedback must be received as soon as possible
+  * the delivery team must receive feedback and the act on it
+* Benefits:
+  * empowering teams
+  * reducing errors
+  * lowering stress
+  * deployment flexibility
+  * practice makes perfect
+* Traditional view of release candidates:
+  * pre-alpha
+  * alpha
+  * beta
+  * release candidate
+  * gold
+* Principles of software delivery:
+  * every check-in leads to a potential release
+  * create repeatable, reliable process for releasing software
+  * automate almost everything
+  * keep everything in version control
+  * if it hurts, do it more frequently and bring the pain forward
+  * build quality in
+  * done means released
+  * everybody is responsible for the delivery process
+  * continuous improvement
+* Version control:
+  * keep everything in version control
+  * check in regularly to trunk
+  * use meaningful commit messages
+* Managing dependencies:
+  * external libraries
+  * components
+* Managin software configuration:
+  * types of configuration:
+    * build time
+    * packaging time
+    * deployment time
+    * startup/run time
+  * don't check passwords into source control or hard-code them in you application
+* Continuous integration - essential practices:
+  * check in regularly
+  * create a comprehensive autoamted test suite
+  * keep the build and test process short
+  * don't check in on a broken build
+  * always run all commit tests locally before commiting or get get CI server to do it for you
+  * wait for commit tests to pass before move on
+  * never go home on a broken build
+  * always be prepared to revert to the previous revision
+  * time-box fixing before reverting
+  * don't comment out failing tests
+  * take responsibility for all breakages that result from your changes
+  * test-drivent development
+  * extreme programming (XP) development practices
+  * failing a build for architectural breaches
+  * failing a build for slow tests
+  * failing a build for warnings and code style breaches
+
 ## Docker tools
 
 * [GitHub codespaces](https://github.com/features/codespaces)
