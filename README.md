@@ -1019,8 +1019,37 @@ ls -la /backup/kubedb/demo/mydb/...
 #### s02e06 - [CI/CD na Kubernetes](https://www.youtube.com/watch?v=R8CaY_SyJjo)
 
 * [How to build CI/CD pipelines on Kubernetes](https://cloudowski.com/articles/how-to-build-cicd-pipelines-on-kubernetes-copy/)
+* not CI/CD, CI and CD
+  * CI (continuous integration) - building before delivering
+    * build app
+    * build image
+    * create k8s files
+  * CD (continuous delivery, deployment)
+    * deploy to preview (dedicated namespace) (after commit & push to feature/fix branch)
+    * deploy to permanent (stage environment, uan env., production env.) (after promoted feature branch to master (release) branch)
+* [kaniko is a tool to build container images from a Dockerfile, inside a container or Kubernetes cluster](https://github.com/GoogleContainerTools/kaniko)
+* [Jenkins stash: Stash some files to be used later in the build](https://www.jenkins.io/doc/pipeline/steps/workflow-basic-steps/#stash-stash-some-files-to-be-used-later-in-the-build)
 
 ```bash
+minikube start --memory 4000
+
+helm init # start tiller
+
+kubectl create ns jenkins
+
+kubectl apply -f jenkins/casc/ -n jenkins
+
+JENKINS_HOST=jenkins.$(minikube ip).nip.io
+
+helm install --namespace jenkins -n jenkins stable/jenkins -f jenkins/jenkins-values.yaml \
+    --set master.ingress.hostName=$JENKINS_HOST 
+
+kubectl create sa deployer -n jenkins
+kubectl create clusterrolebinding jenkins-deployer-admin --clusterrole=cluster-admin --serviceaccount=jenkins:deployer
+
+kubectl create secret generic jenkins-docker-creds  --from-file=.dockerconfigjson=/Users/tomasz/.docker/config.json  --type=kubernetes.io/dockerconfigjson -n jenkins
+
+echo http://$JENKINS_HOST
 ```
 
 #### s02e07 - Helm
