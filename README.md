@@ -1151,6 +1151,22 @@ kubectl view-secret SECRET_NAME
   * failing a build for architectural breaches
   * failing a build for slow tests
   * failing a build for warnings and code style breaches
+* Deployment pipeline:
+  * source code -> commit stage -> artifact repository
+    * commit stage: compile, commit tests, assemble, code analysis
+  * env & app config -> acceptance stage <- artifact repository
+    * acceptance stage: configure environment, deploy binaries, smoke tests, acceptance tests
+  * commit stage -> acceptance stage -> UAT, capacity stage, production
+    * UAT: conf. env., deploy binaries, smoke tests
+    * capacity stage: conf. env., deploy binaries, smoke tests, run capacity tests
+    * production: conf. env., deploy binaries, smoke tests
+* Deployment pipeline practices:
+  * only build your binaries once
+  * deploy the same way to every environment
+  * smoke-test your deployments
+  * deploy into a copy of production
+  * each change should propagate through the pipeline instantly
+  * if any part of the pipeline fails, stop the line
 
 ## Docker tools
 
