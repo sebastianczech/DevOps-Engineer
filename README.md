@@ -1283,6 +1283,26 @@ kubectl view-secret SECRET_NAME
   * have a warm-up period for a new deployment
   * fail fast
   * don't make changes directly on the production env.
+* Managing infrastructure:
+  * controlling access to infrastructure
+  * making changes to infrastrcture:
+    * logged
+    * tested before deployed
+    * saved in version control
+    * verified after deployed
+* Managing data:
+  * database scripting
+  * initializing databases
+  * inceremental change
+  * versioning database
+  * managing orchestrated changes
+  * decoupling application deployment from database migration
+* Managing test data:
+  * faking the database for unit tests
+  * managing coupling between tests and data
+  * test isolation (each test is atomic)
+  * setup and tear down
+  * coherent test scenarios
 * 
 
 ## Docker tools
