@@ -1248,6 +1248,42 @@ kubectl view-secret SECRET_NAME
     * longevity testing
     * throughput testing
     * load testing
+* Release strategy:
+  * asset and conf. management
+  * deployment pipeline
+  * environments for acceptance, capacity, integration etc.
+  * requirements for monitoring
+  * integrations with external systems
+  * logging
+  * disaster recovery
+  * service-level agrements
+  * production sizing and capacity planning
+  * archiving strategy
+  * initial deployment
+  * fixing defects and applying patches
+  * upgrades of production env.
+  * application support
+* Release process:
+  * integration testing
+  * acceptance testing
+  * user-acceptance testing
+  * staging
+  * production
+* Rolling back deployments and zero-downtime release
+  * rolling back by redeploying previous good version
+  * zero-downtime releases
+  * blue-green deployments
+  * canaray releasing
+* Release tips and tricks:
+  * people who do the deployment should be involved in creating the deployment process
+  * log deployment activities
+  * don't delete the old files, move them
+  * deployment is the whole team's responsibility
+  * server applications should not have GUIs
+  * have a warm-up period for a new deployment
+  * fail fast
+  * don't make changes directly on the production env.
+* 
 
 ## Docker tools
 
