@@ -1223,6 +1223,31 @@ kubectl view-secret SECRET_NAME
   * minimizing state in tests
   * faking time
   * brute force 
+* FIRST properties of Unit Tests:
+  * Fast
+  * Isolated
+  * Repeatable
+  * Self-verifying
+  * Timely
+* INVEST principles of Acceptance Criteria:
+  * Independent
+  * Negotiable
+  * Valuable
+  * Estimable
+  * Small
+  * Testable
+* Acceptance tests performance:
+  * refactor common tasks
+  * share expensive resources
+  * parallel testing
+  * using compute grids
+* Managing nonfunctional requirements (NFRs):
+  * programming for capacity
+  * measuring capacity:
+    * scalability testing
+    * longevity testing
+    * throughput testing
+    * load testing
 
 ## Docker tools
 
