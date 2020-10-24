@@ -1303,7 +1303,18 @@ kubectl view-secret SECRET_NAME
   * test isolation (each test is atomic)
   * setup and tear down
   * coherent test scenarios
-* 
+* Keeping you app releasable:
+  * hide new functionality until it is finished
+  * make all changes incrementally 
+  * branch by abstraction
+* Dependencies:
+  * dependency hell
+  * dependency graph
+  * cautios optimism
+    * upstream dependency is static or (not trigger build)
+    * upstream dependency is guarded or (only remind)
+    * upstream dependency is fluid (always trigger build)
+  * circular dependency build ladder
 
 ## Docker tools
 
