@@ -1315,6 +1315,31 @@ kubectl view-secret SECRET_NAME
     * upstream dependency is guarded or (only remind)
     * upstream dependency is fluid (always trigger build)
   * circular dependency build ladder
+* Branching:
+  * develop on mainline (trunk based development)
+  * branch for release
+  * branch by feature
+  * branch by team
+* [Infrastructure as Code Maturity Model](https://programmaticponderings.com/2016/11/25/infrastructure-as-code-maturity-model/)
+* Project lifecycle:
+  * identification
+  * inception
+  * initiation
+  * develop and release
+  * operation
+* Risk management process:
+  * risk management 101 (0 - impossible, 1 - certain)
+  * risk management timeline (in each stage of project lifecycle)
+* Common delivery problems:
+  * infrequent or buggy deployments
+  * poor app quality
+  * poorly managed continuous integration process
+  * poor configuration management
+* Compliance and auditing:
+  * automation over documentation
+  * enforcing traceability
+  * working in silos
+  * change management
 
 ## Docker tools
 
