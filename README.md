@@ -1167,6 +1167,62 @@ kubectl view-secret SECRET_NAME
   * deploy into a copy of production
   * each change should propagate through the pipeline instantly
   * if any part of the pipeline fails, stop the line
+* Build and deployment scripting - priciples and best practices:
+  * create a script for each stage in your deployment pipeline
+  * use an appropriate technology to deploy your application
+  * use the same scripts to deploy to every environment
+  * use your operating system's packaging tools
+  * ensure the deployment process is idempotent
+  * evolve your deployment system incrementally
+* Project structure:
+  * managing source code
+  * managing tests
+  * managing build output
+  * managing libraries
+* Deploying software layers:
+  * hardware
+  * operating system & conf.
+  * middleware & conf.
+  * apps / services / components & conf.
+* Deployments problems - tips and tricks:
+  * always use relative paths
+  * eliminate manual steps
+  * build in traceability from binaries to version control
+  * don't check binaries into version control as part of our build
+  * test targets should not fail the build
+  * constraint your application with integrated smoke tests
+* Commit stage - principles and practices:
+  * provide fast, useful feedback
+  * what should break commit stage ? 
+    * compilation fails
+    * tests break
+    * env. problem
+    * bad quality of code
+    * hunderds of warnings
+  * tend the commit stage carefully:
+    * build scripts
+    * scripts to run unit tests
+    * static analysis tools
+  * give developers ownership
+  * use build master for very large teams
+* The result of the commit stage -> artifact repository
+  * developer checks in version control
+  * commit stage results to artifact repository
+  * acceptance test stage uses binaries from artifact repository
+  * manual test stage uses binaries from artifact repository
+  * performance testing stage uses binaries from artifact repository
+  * release stage uses binaries from artifact repository
+* Commit test suite principles and practices:
+  * test automation pyramid (Unit > Service > UI)
+  * avoid user interfaces
+  * use dependency injection
+  * avoid database
+  * avoid asynchrony in unit tests
+  * use test doubles
+    * use stubs to substitute for messaging systems
+  * minimizing state in tests
+  * faking time
+  * brute force 
 
 ## Docker tools
 
