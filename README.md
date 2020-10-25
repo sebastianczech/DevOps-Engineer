@@ -1353,12 +1353,22 @@ doctl kubernetes cluster list
 
 kubectl create namespace python     
 kubens python
+
 kubectl apply -f ci-cd-learn/kubernetes/python-flask-api-hostname-env-time/deployment.yaml        
 kubectl apply -f ci-cd-learn/kubernetes/python-flask-api-hostname-env-time/service-loadbalancer.yaml
 kubectl get all
+
 kubectl apply -f ci-cd-learn/kubernetes/python-flask-api-hostname-env-time/configmap.yaml 
 kubectl get configmap
 kubectl describe configmaps python-flask-api-hostname-env-time-config 
+
+doctl compute load-balancer list --no-header --format IP
+export DIGITALOCEAN_LOADBALANCER=`doctl compute load-balancer get $(doctl compute load-balancer list --no-header --format ID) --format IP --no-header`
+
+helm install nginx-ingress stable/nginx-ingress --set controller.publishService.enabled=true
+kubectl get services -o wide -w nginx-ingress-controller
+kubectl apply -f ci-cd-learn/kubernetes/python-flask-api-hostname-env-time/service-clusterip.yaml 
+kubectl apply -f ci-cd-learn/kubernetes/python-flask-api-hostname-env-time/ingress-nginx.yaml
 ```
 
 * [Explore Kubernetes](https://www.digitalocean.com/resources/kubernetes/)
