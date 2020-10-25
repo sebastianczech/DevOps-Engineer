@@ -1341,6 +1341,30 @@ kubectl view-secret SECRET_NAME
   * working in silos
   * change management
 
+## DigitalOcean 
+
+### Create a Kubernetes cluster on DigitalOcean
+
+```bash
+brew install doctl
+doctl auth init
+doctl kubernetes cluster kubeconfig save ***
+doctl kubernetes cluster list 
+
+kubectl create namespace python     
+kubens python
+kubectl apply -f ci-cd-learn/kubernetes/python-flask-api-hostname-env-time/deployment.yaml        
+kubectl apply -f ci-cd-learn/kubernetes/python-flask-api-hostname-env-time/service-loadbalancer.yaml
+kubectl get all
+```
+
+* [Explore Kubernetes](https://www.digitalocean.com/resources/kubernetes/)
+* [Kubernetes for Full-Stack Developers](https://www.digitalocean.com/community/curriculums/kubernetes-for-full-stack-developers)
+* [Getting Started with Containers and Kubernetes: A DigitalOcean Workshop Kit](https://www.digitalocean.com/community/meetup_kits/getting-started-with-containers-and-kubernetes-a-digitalocean-workshop-kit)
+* [How To Create a Kubernetes Cluster Using Kubeadm on Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-create-a-kubernetes-cluster-using-kubeadm-on-ubuntu-18-04)
+* [How To Install Jenkins on Kubernetes](https://www.digitalocean.com/community/tutorials/how-to-install-jenkins-on-kubernetes)
+* [Architecting Applications for Kubernetes](https://www.digitalocean.com/community/tutorials/architecting-applications-for-kubernetes)
+
 ## Docker tools
 
 * [GitHub codespaces](https://github.com/features/codespaces)
