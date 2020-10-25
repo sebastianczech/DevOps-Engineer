@@ -1356,6 +1356,9 @@ kubens python
 kubectl apply -f ci-cd-learn/kubernetes/python-flask-api-hostname-env-time/deployment.yaml        
 kubectl apply -f ci-cd-learn/kubernetes/python-flask-api-hostname-env-time/service-loadbalancer.yaml
 kubectl get all
+kubectl apply -f ci-cd-learn/kubernetes/python-flask-api-hostname-env-time/configmap.yaml 
+kubectl get configmap
+kubectl describe configmaps python-flask-api-hostname-env-time-config 
 ```
 
 * [Explore Kubernetes](https://www.digitalocean.com/resources/kubernetes/)
