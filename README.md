@@ -1371,6 +1371,8 @@ kubectl apply -f ci-cd-learn/kubernetes/python-flask-api-hostname-env-time/servi
 kubectl apply -f ci-cd-learn/kubernetes/python-flask-api-hostname-env-time/ingress-nginx.yaml
 ```
 
+Files used in following commands are in [Learning-CI-CD repository](https://github.com/sebastianczech/Learning-CI-CD/tree/master/kubernetes/python-flask-api-hostname-env-time).
+
 * [Explore Kubernetes](https://www.digitalocean.com/resources/kubernetes/)
 * [Kubernetes for Full-Stack Developers](https://www.digitalocean.com/community/curriculums/kubernetes-for-full-stack-developers)
 * [Getting Started with Containers and Kubernetes: A DigitalOcean Workshop Kit](https://www.digitalocean.com/community/meetup_kits/getting-started-with-containers-and-kubernetes-a-digitalocean-workshop-kit)
