@@ -1345,6 +1345,8 @@ kubectl view-secret SECRET_NAME
 
 ### Create a Kubernetes cluster on DigitalOcean
 
+* [kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet)
+
 ```bash
 brew install doctl
 doctl auth init
@@ -1369,6 +1371,34 @@ helm install nginx-ingress stable/nginx-ingress --set controller.publishService.
 kubectl get services -o wide -w nginx-ingress-controller
 kubectl apply -f ci-cd-learn/kubernetes/python-flask-api-hostname-env-time/service-clusterip.yaml 
 kubectl apply -f ci-cd-learn/kubernetes/python-flask-api-hostname-env-time/ingress-nginx.yaml
+
+kubectl delete namespace python 
+
+kubectl create namespace data     
+kubens data      
+
+kubectl apply -f ci-cd-learn/kubernetes/volumes/persistent-volume-claim.yaml 
+kubectl apply -f ci-cd-learn/kubernetes/volumes/pod-app-with-volume.yaml
+kubectl apply -f ci-cd-learn/kubernetes/volumes/pod-db-with-volume.yaml
+kubectl delete -f ci-cd-learn/kubernetes/volumes/pod-app-with-volume.yaml    
+kubectl logs api-db  
+
+kubectl apply -f ci-cd-learn/kubernetes/volumes/secret.yaml
+kubectl delete -f ci-cd-learn/kubernetes/volumes/pod-db-with-volume.yaml    
+kubectl apply -f ci-cd-learn/kubernetes/volumes/pod-db-with-volume.yaml
+
+kubectl create secret generic api-secrets  --from-file=ci-cd-learn/kubernetes/volumes/pg-password
+
+kubectl get pv         
+kubectl get pvc   
+kubectl get volumeattachments
+
+kubectl get secret 
+kubectl get secret api-secret -o jsonpath='{.data.POSTGRES_PASSWORD}' | base64 --decode   
+
+kubectl delete -f ci-cd-learn/kubernetes/volumes/pod-db-with-volume.yaml    
+kubectl delete pvc api-pvc
+kubectl delete namespace data 
 ```
 
 Files used in following commands are in [Learning-CI-CD repository](https://github.com/sebastianczech/Learning-CI-CD/tree/master/kubernetes/python-flask-api-hostname-env-time).
@@ -1380,6 +1410,7 @@ Files used in following commands are in [Learning-CI-CD repository](https://gith
 * [How To Install Jenkins on Kubernetes](https://www.digitalocean.com/community/tutorials/how-to-install-jenkins-on-kubernetes)
 * [Architecting Applications for Kubernetes](https://www.digitalocean.com/community/tutorials/architecting-applications-for-kubernetes)
 * [How To Set Up an Nginx Ingress on DigitalOcean Kubernetes Using Helm](https://www.digitalocean.com/community/tutorials/how-to-set-up-an-nginx-ingress-on-digitalocean-kubernetes-using-helm)
+* [How to Add Block Storage Volumes to Kubernetes Clusters](https://www.digitalocean.com/docs/kubernetes/how-to/add-volumes/)
 
 ## Docker tools
 
