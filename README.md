@@ -1424,6 +1424,14 @@ Files used in following commands are in [Learning-CI-CD repository](https://gith
 * [Open Container Initiative - OCI](https://opencontainers.org/)
 * [From Docker to OCI: What is a container?](https://www.padok.fr/en/blog/container-docker-oci)
 
+## IDE && dev environments
+
+* [Gitpod](https://www.gitpod.io/)
+* [AWS Cloud9](https://aws.amazon.com/cloud9/)
+* [CodeSandbox](https://codesandbox.io/)
+* [Eclipse Che](https://www.eclipse.org/che/)
+* [Eclipse Theia](https://theia-ide.org/)
+
 ## Other materials
 
 * [The Roadmap to Becoming a DevOps Professional — From Server to Serverless](https://jobsfordevops.com/blog/how-to-become-a-devops-engineer/)
