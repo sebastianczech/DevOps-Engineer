@@ -1412,6 +1412,14 @@ Files used in following commands are in [Learning-CI-CD repository](https://gith
 * [How To Set Up an Nginx Ingress on DigitalOcean Kubernetes Using Helm](https://www.digitalocean.com/community/tutorials/how-to-set-up-an-nginx-ingress-on-digitalocean-kubernetes-using-helm)
 * [How to Add Block Storage Volumes to Kubernetes Clusters](https://www.digitalocean.com/docs/kubernetes/how-to/add-volumes/)
 
+## Certified Kubernetes Administrator (CKA)
+
+* [CKA training](https://kubernetes.io/training/)
+* [kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
+* [Kubernetes The Hard Way](https://github.com/kelseyhightower/kubernetes-the-hard-way)
+* [Resources - Kubernetes Certified Administration](https://github.com/walidshaari/Kubernetes-Certified-Administrator)
+* [CKAD Exercises](https://github.com/dgkanatsios/CKAD-exercises)
+
 ## Docker tools
 
 * [GitHub codespaces](https://github.com/features/codespaces)
