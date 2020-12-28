@@ -4,6 +4,49 @@ Notes and links useful for DevOps Engineer
 
 ## Azure Microsoft Learn
 
+### [AZ-104 - Microsoft Certified: Azure Administrator Associate](https://docs.microsoft.com/en-gb/learn/certifications/azure-administrator)
+
+#### Azure CLI
+
+```
+az --version  
+
+az find "az vm"
+az find "az vm create"  
+
+az find blob
+az storage blob --help
+
+az login
+
+az group create --name <name> --location <location>
+az group list
+
+export RESOURCE_GROUP=learn-***
+export AZURE_REGION=centralus
+export AZURE_APP_PLAN=popupappplan-$RANDOM
+export AZURE_WEB_APP=popupwebapp-$RANDOM
+
+az group list --output table
+az group list --query "[?name == '$RESOURCE_GROUP']"
+
+az appservice plan create --name $AZURE_APP_PLAN --resource-group $RESOURCE_GROUP --location $AZURE_REGION --sku FREE
+az appservice plan list --output table
+
+az webapp create --name $AZURE_WEB_APP --resource-group $RESOURCE_GROUP --plan $AZURE_APP_PLAN
+az webapp list --output table
+curl $AZURE_WEB_APP.azurewebsites.net
+
+az webapp deployment source config --name $AZURE_WEB_APP --resource-group $RESOURCE_GROUP --repo-url "https://github.com/Azure-Samples/php-docs-hello-world" --branch master --manual-integration
+curl $AZURE_WEB_APP.azurewebsites.net
+```
+
+* [JMESPath - a query language for JSON](https://jmespath.org/)
+
+### [AZ-204 - Microsoft Certified: Azure Developer Associate](https://docs.microsoft.com/en-gb/learn/certifications/azure-developer)
+
+### [AZ-400 - Microsoft Certified: DevOps Engineer Expert](https://docs.microsoft.com/en-gb/learn/certifications/devops-engineer)
+
 ### [Evolve your DevOps practices](https://docs.microsoft.com/pl-pl/learn/paths/evolve-your-devops-practices/)
 
 * **Value stream map (VSM)** - helps you analyze your current release cycle process
