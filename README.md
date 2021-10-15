@@ -2,6 +2,61 @@
 
 Notes and links useful for DevOps Engineer
 
+## DevOps skills
+
+3 pillars of DevOps:
+
+!["3 pillars of DevOps"](images/devops_3_pillars.png "3 pillars of DevOps")
+
+Code for picture: 
+
+```plantuml
+@startmindmap
++[#999999] DevOps
+++[#bbbbbb] Culture
+++[#bbbbbb] Practices
+++[#bbbbbb] Tools
+@endmindmap
+```
+
+Top DevOps skills 2021:
+
+!["Top DevOps skills 2021"](images/devops_skills_2021.png "Top DevOps skills 2021")
+
+1. https://github.com/sebastianczech/Design-Patterns-In-Python
+2. https://github.com/sebastianczech/API-golang
+3. https://github.com/sebastianczech/Cloud-Native-CI-CD
+4. https://github.com/sebastianczech/Learning-CI-CD
+5. https://github.com/sebastianczech/Modern-Software-Architect
+6. https://github.com/sebastianczech/DevOps-Engineer
+
+Code for picture:
+
+```plantuml
+@startmindmap
++[#999999] Skills
+++[#bbbbbb] Basics
++++_ Linux (4)
++++_ Git (4)
+++[#bbbbbb] Programming languages
++++_ Python (1)
++++_ Go (2)
+++[#bbbbbb] CI/CD
++++_ Jenkins (4)
++++_ Gitlab (4)
++++_ TektonCD (3)
+++[#bbbbbb] Infrastructure
++++_ Ansible (4)
++++_ Terraform (4)
+++[#bbbbbb] Cloud
++++_ Kubernetes (3,4,6)
++++_ AWS/Azure/GCP/... (4)
+++[#bbbbbb] Other
++++_ TDD (1)
++++_ Software architecture (6)
+@endmindmap
+```
+
 ## Azure Microsoft Learn
 
 ### [AZ-104 - Microsoft Certified: Azure Administrator Associate](https://docs.microsoft.com/en-gb/learn/certifications/azure-administrator)
