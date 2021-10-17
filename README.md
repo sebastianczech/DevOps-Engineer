@@ -19,6 +19,10 @@ Code for picture:
 @endmindmap
 ```
 
+3 pillars based on image from https://www.predicagroup.com/blog/azure-devops/:
+
+![image.png](https://www.predicagroup.com/app/uploads/2019/08/DevOpsTools1-300x300.png)
+
 Top DevOps skills 2021:
 
 !["Top DevOps skills 2021"](images/devops_skills_2021.png "Top DevOps skills 2021")
