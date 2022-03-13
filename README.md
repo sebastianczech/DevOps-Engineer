@@ -751,6 +751,37 @@ sudo -u $SUDO_USER ./config.sh --unattended \
 * the principle of least privilege (minimum amount of privileges users need to do their job)
 * new user has no permission when first created
 * access key id + secret access key != username + password
+* S3:
+  * object storage
+  * scalable
+  * simple
+  * safe
+* S3 manages data as objects rather than in file systems or data blocks
+* S3:
+  * unlimited storage
+  * objects up to 5 TB
+  * buckets
+* S3 buckets:
+  * universal namespace (globally unique)
+  * URL: ``http://bucket-name.s3.region.amazonaws.com/key-name``
+  * after uploading file 200 HTTP code is returned
+* key-valute store (S3 object tips):
+  * key - name of the object
+  * value - data itself
+  * version ID
+  * metadata - data about data
+* S3:
+  * high available - 99,95 - 99,99%
+  * high durable - 99,99999999999% (11 9's) (losing objects)
+* S3 - characteristics:
+  * tiered storage (storage classes)
+  * lifecycle management
+  * versioning
+* Securing data:
+  * server-side encryption
+  * access control lists (ACL)
+  * bucket policies
+* strong read-after-write consistency
 
 ## Kubernetes
 
