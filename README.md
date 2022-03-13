@@ -770,9 +770,12 @@ sudo -u $SUDO_USER ./config.sh --unattended \
   * value - data itself
   * version ID
   * metadata - data about data
-* S3:
+* S3 standard:
   * high available - 99,95 - 99,99%
+    * >= 3 AZs
   * high durable - 99,99999999999% (11 9's) (losing objects)
+  * designed for frequent access
+  * suitable for most workloads (default storage class)
 * S3 - characteristics:
   * tiered storage (storage classes)
   * lifecycle management
@@ -798,6 +801,24 @@ sudo -u $SUDO_USER ./config.sh --unattended \
 * deletion object - how to protect:
   * enable versioning
   * enable MFA
+* S3 standard-infrequent access (S3-standard-IA) 
+* S3 one zone-infrequent access (like S3-standard-IA but data is stored redundantny withing single AZ)
+* Glacier:
+  * cheap storage
+  * optimized for data that is access infrequently
+  * you pay when access data
+  * use only for archiving data
+  * option
+    * Glacier - retrieve time 1 minute - 12 hours
+    * Glacier Deep Archive - retrieve time ~12 hours
+* S3 intelligent-tiering (frequent and infrequent access)
+* S3 storage classes:
+  * S3 standard (most workloads)
+  * S3 standard-IA (long-term, infrequent critical data)
+  * S3 one zone-IA+ (long-term, inrequent non-critical data)
+  * S3 Glacier (long-term archiving occasionally access withing few hours / minutes)
+  * S3 Glacier deep archive (rarely accessed with time retrieval 12 hours)
+  * S3 intellingent-tiering (unknonw and unpredictable access patterns)
 
 ## Kubernetes
 
