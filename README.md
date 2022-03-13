@@ -735,7 +735,22 @@ sudo -u $SUDO_USER ./config.sh --unattended \
   * reliability
   * performance efficiency
   * cost optimization
-* 
+* IAM
+  * create users and grant permissions
+  * create groups and roles
+  * control access to AWS resources
+* root account - full administrative access, needs to be secured:
+  * enable MFA
+  * create admin group for administrators and assign appropriate permissions
+  * create user accounts for administrators
+  * add your user to admin groups
+* IAM policy:
+  * effect
+  * action
+  * resource
+* the principle of least privilege (minimum amount of privileges users need to do their job)
+* new user has no permission when first created
+* access key id + secret access key != username + password
 
 ## Kubernetes
 
