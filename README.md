@@ -779,9 +779,18 @@ sudo -u $SUDO_USER ./config.sh --unattended \
   * versioning
 * Securing data:
   * server-side encryption
-  * access control lists (ACL)
-  * bucket policies
+  * access control lists (ACL) (on object level)
+  * bucket policies (on entire bucket level):
+    * sid
+    * effect
+    * principal
+    * action
+    * resource
 * strong read-after-write consistency
+* buckets are private by default
+* S3 - static website hosting feature
+* Bucket policies can make entire buckets public
+* Automatic scalling in S3
 
 ## Kubernetes
 
