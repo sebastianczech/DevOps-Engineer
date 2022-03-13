@@ -697,6 +697,46 @@ sudo -u $SUDO_USER ./config.sh --unattended \
       * host based
   * [Amazon EKS Workshop](https://www.eksworkshop.com/)
 
+## AWS Certified Solutions Architect - Associate (SAA-C02)
+
+* 4 domains:
+  * resilient architecture
+  * high-performing architecture
+  * secure applications
+  * cost-optimized architecture
+* availability zone == data center
+* regions is geographical area, consists of 2 or more availability zones
+* edge location are endpoints of AWS that are used for caching content (e.g. CloudFron (CDN))
+* if you can do yourself something in AWS management console, then you are likely responsible (in other case AWS)
+* services:
+  * compute
+    * EC2
+    * Lambda
+    * Elastic Beanstalk
+  * storage
+    * S3
+    * EBS
+    * EFS
+    * FSx
+    * Storage Gateway
+  * databse
+    * RDS
+    * DynamoDB
+    * Redshift
+  * networking
+    * VPCs
+    * Direct Connect
+    * Route 53
+    * API Gateway
+    * AWS Global Accelerator 
+* 5 pillars of the Well-Architected Framework
+  * operational excellence
+  * security
+  * reliability
+  * performance efficiency
+  * cost optimization
+* 
+
 ## Kubernetes
 
 ### Kubernetes po polsku
