@@ -789,8 +789,15 @@ sudo -u $SUDO_USER ./config.sh --unattended \
 * strong read-after-write consistency
 * buckets are private by default
 * S3 - static website hosting feature
-* Bucket policies can make entire buckets public
-* Automatic scalling in S3
+* bucket policies can make entire buckets public
+* automatic scalling in S3
+* versioning cannot be disabled once enabled
+* all versions of object are stored in S3
+* versioning can be integrated with lifecycle rules
+* versioning can support multi-factor authentication
+* deletion object - how to protect:
+  * enable versioning
+  * enable MFA
 
 ## Kubernetes
 
