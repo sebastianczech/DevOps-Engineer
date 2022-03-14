@@ -819,6 +819,10 @@ sudo -u $SUDO_USER ./config.sh --unattended \
   * S3 Glacier (long-term archiving occasionally access withing few hours / minutes)
   * S3 Glacier deep archive (rarely accessed with time retrieval 12 hours)
   * S3 intellingent-tiering (unknonw and unpredictable access patterns)
+* S3 lifecycle management:
+  * automatic moving objects between different storage tiers, thereby maximizing cost effectivness
+  * combining with versioning
+  * can be applied to current versions and previous ones
 
 ## Kubernetes
 
