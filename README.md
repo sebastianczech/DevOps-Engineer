@@ -823,6 +823,18 @@ sudo -u $SUDO_USER ./config.sh --unattended \
   * automatic moving objects between different storage tiers, thereby maximizing cost effectivness
   * combining with versioning
   * can be applied to current versions and previous ones
+* S3 object lock:
+  * use it to store objects using a write once, read many (WORM) model
+  * modes:
+    * governance mode - users can't overwrite or delete object version or alter is lock settings unless they have speciall permissions
+    * compliance mode - a protected object version can't be overwritte or deleted by any user, including root user
+  * retention periods:
+    * protects an object version of for fixed amount of timee
+    * after period expires, object version can be overwritten or deleted
+  * legal holds:
+    * prevents an object version from being overwritten or deleted, but there is no retention period and remains active until removed (``s3:PutObjectLegalHold``)
+* Glacier Vault Lock:
+  * 
 
 ## Kubernetes
 
