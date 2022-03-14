@@ -825,6 +825,7 @@ sudo -u $SUDO_USER ./config.sh --unattended \
   * can be applied to current versions and previous ones
 * S3 object lock:
   * use it to store objects using a write once, read many (WORM) model
+  * can be on individual objects or accross the bucket
   * modes:
     * governance mode - users can't overwrite or delete object version or alter is lock settings unless they have speciall permissions
     * compliance mode - a protected object version can't be overwritte or deleted by any user, including root user
@@ -834,7 +835,7 @@ sudo -u $SUDO_USER ./config.sh --unattended \
   * legal holds:
     * prevents an object version from being overwritten or deleted, but there is no retention period and remains active until removed (``s3:PutObjectLegalHold``)
 * Glacier Vault Lock:
-  * 
+  * allows to easily deploy and enforce compliance controls for individual S3 Glacier vaults with a vault lock policy
 
 ## Kubernetes
 
