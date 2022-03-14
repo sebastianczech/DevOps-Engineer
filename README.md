@@ -834,7 +834,7 @@ sudo -u $SUDO_USER ./config.sh --unattended \
     * after period expires, object version can be overwritten or deleted
   * legal holds:
     * prevents an object version from being overwritten or deleted, but there is no retention period and remains active until removed (``s3:PutObjectLegalHold``)
-* Glacier Vault Lock:
+* S3 Glacier Vault Lock:
   * allows to easily deploy and enforce compliance controls for individual S3 Glacier vaults with a vault lock policy
 
 ## Kubernetes
