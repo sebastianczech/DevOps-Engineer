@@ -867,6 +867,10 @@ sudo -u $SUDO_USER ./config.sh --unattended \
 * Download:
   * S3 byte-range fetches:
     * parallelzie downloads
+* S3 replication - backing up data
+  * between buckets (versioning must be enabled)
+  * object in existing bucket are not replicated automatically
+  * delete markers are not replicated by default
 
 ## Kubernetes
 
