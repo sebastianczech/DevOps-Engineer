@@ -836,6 +836,21 @@ sudo -u $SUDO_USER ./config.sh --unattended \
     * prevents an object version from being overwritten or deleted, but there is no retention period and remains active until removed (``s3:PutObjectLegalHold``)
 * S3 Glacier Vault Lock:
   * allows to easily deploy and enforce compliance controls for individual S3 Glacier vaults with a vault lock policy
+* S3 encryption - types:
+  * encryption in transit 
+    * SSL/TLS
+    * HTTPS
+  * encryption at rest (server-side encryption) (do it in console or bucket policy)
+    * SSE-S3 (S3 managed keys)
+    * SSE-KMS (key management service)
+    * SSE-C (customer-provided keys)
+  * encryption at rest (client-side encryption) (before uploading file)
+* Enforcing server-side encryption with bucket policy:
+  * ``x-amz-server-side-encryption`` (in request header)
+  * 2 options:
+    * ``x-amz-server-side-encryption: AES256``
+    * ``x-amz-server-side-encryption: aws:kms``
+  * PUT request header
 
 ## Kubernetes
 
