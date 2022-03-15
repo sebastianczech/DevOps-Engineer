@@ -851,6 +851,22 @@ sudo -u $SUDO_USER ./config.sh --unattended \
     * ``x-amz-server-side-encryption: AES256``
     * ``x-amz-server-side-encryption: aws:kms``
   * PUT request header
+* S3 prefixes:
+  * ``bucket/folder/subfolder/file``, then ``folder/subfolder`` is prefix
+  * we can get better performance by spreading your reads across different prefixes:
+    * 3500 PUT/COPY/POST/DELETE per second per prefix
+    * 5500 GET/HEAD per second per prefix
+* Limitations with KMS:
+  * while uploading file, call GenerateDataKey
+  * while downloading file, call Decrypt
+  * KMS request rates (region specific - 5500, 10000 or 30000 req/sec)
+* Upload:
+  * multipart:
+    * recommended for file>100MB, required>5GB
+    * parallelize uploads
+* Download:
+  * S3 byte-range fetches:
+    * parallelzie downloads
 
 ## Kubernetes
 
