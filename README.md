@@ -699,6 +699,10 @@ sudo -u $SUDO_USER ./config.sh --unattended \
 
 ## AWS Certified Solutions Architect - Associate (SAA-C02)
 
+* [AWS Learning Library](https://www.aws.training/LearningLibrary)
+* [AWS Certified Solutions Architect – Associate](https://aws.amazon.com/certification/certified-solutions-architect-associate/)
+* [AWS Architecture Center](https://aws.amazon.com/architecture/)
+
 * 4 domains:
   * resilient architecture
   * high-performing architecture
