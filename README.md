@@ -876,6 +876,8 @@ sudo -u $SUDO_USER ./config.sh --unattended \
   * object in existing bucket are not replicated automatically
   * delete markers are not replicated by default
 
+TODO - chapter 6, page 187, EC2 Overview
+
 ## Kubernetes
 
 ### Kubernetes po polsku
