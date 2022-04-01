@@ -875,8 +875,21 @@ sudo -u $SUDO_USER ./config.sh --unattended \
   * between buckets (versioning must be enabled)
   * object in existing bucket are not replicated automatically
   * delete markers are not replicated by default
+* EC2 - Elastic Compute Cloud - secure, resizable compute capacity in the cloud
+* EC2 options:
+  * on-demand (flexible, short-term)
+  * reserved
+  * spot (unused capacity)
+  * dedicated (compliance, licensing)
+* IAM role - identity in IAM that has specific permissions
+* Roles are temporary
+* Security groups - virtual firewall for EC2 instance (by default all is blocked)
+* Bootstrap scrips (user data) runs when instance first runs
+* Many EC2 instance in security group, many security groups attached to EC2 instance
+* All inbound traffic is blocked by default, outbound is allowed 
+* EC2 metada - data about EC2 instance (``http://169.254.169.254/latest/meta-data/local-ipv4``)
 
-TODO - chapter 6, page 187, EC2 Overview
+TODO - page 238, networking
 
 ## Kubernetes
 
