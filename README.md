@@ -912,8 +912,39 @@ sudo -u $SUDO_USER ./config.sh --unattended \
   * reserverd
   * spot
   * dedicated
+* EBS - elastic block store - storage volumes attached to EC2 instances:
+  * general purpose SSD - gp2 (3000 IOS)
+  * general purpose SSD - gp3 (4 x faster than gp2) (16000 IOPS)
+  * proviosioned IOPS SSD - io1 (64000 OPS)
+  * proviosioned IOPS SSD - io2 (64000 OPS) (the same price as io1)
+  * throughput optimized HDD - st1
+  * cold HDD - sc1 (lowest cost option)
+* Volume - virtual hard disk. EC2 requires at least 1 volume
+  * location - EBS in the same AZ as EC2
+  * resize - on the fly
+  * type - switch volume type
+* Snapshots - photograph of volume
+  * consistent, so stop instance is recommended
+  * encrypted if volume encrypted
+  * sharing in region
+* AMI - Amazon Machine Image - provided when you launch instance:
+  * region
+  * OS
+  * architecture (32b, 64b)
+  * launch permissions
+  * storage
+* AMI categories:
+  * Amazon EBS (volume from snapshot)
+    * can be stopped
+  * Instance Store (tempalte stored in S3)
+    * instance store volume cannot be stopped (ephemeral storage)
+* Encrypt unecrypted volume
+  * create snaphsot
+  * create a copy of snapshot with encrypt option
+  * create AMI from encrypted snaphsot
+  * use AMI to launch encrypted instance 
 
-TODO - page 238, networking
+TODO - page 335, EFS
 
 ## Kubernetes
 
