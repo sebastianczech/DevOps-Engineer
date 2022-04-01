@@ -879,7 +879,14 @@ sudo -u $SUDO_USER ./config.sh --unattended \
 * EC2 options:
   * on-demand (flexible, short-term)
   * reserved
-  * spot (unused capacity)
+  * spot (unused capacity) (up to 90% discount)
+    * spot price
+    * spot block (not termiante if spot price goes over max)
+    * spot fleet (collection of spot instances) - strategies:
+      * capacity optimized
+      * lowest price
+      * diversified
+      * instance pools to use count
   * dedicated (compliance, licensing)
 * IAM role - identity in IAM that has specific permissions
 * Roles are temporary
@@ -888,6 +895,23 @@ sudo -u $SUDO_USER ./config.sh --unattended \
 * Many EC2 instance in security group, many security groups attached to EC2 instance
 * All inbound traffic is blocked by default, outbound is allowed 
 * EC2 metada - data about EC2 instance (``http://169.254.169.254/latest/meta-data/local-ipv4``)
+* 3 types of virtual networking cards:
+  * ENI - elastic network interface
+  * EN - enhances networking (single root I/O virtualization - SR-IOV) (10 Gbps - 100 Gbps)
+    * ENA - elastic network adapter
+    * VF - virtual function interface (older instances)
+  * EFA - elastic fabric adapter (high performance computing) (OS-bypass)
+* 3 types of placement groups:
+  * cluster (single availability zone)
+  * spread (distinct underlaying hardware)
+  * partition (separate rack with network and power source)
+* We can't merge placement groups
+* Stopped instance can be moved into placement group
+* Pricing models for EC2:
+  * on-demand
+  * reserverd
+  * spot
+  * dedicated
 
 TODO - page 238, networking
 
