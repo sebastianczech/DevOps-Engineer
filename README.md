@@ -1093,6 +1093,36 @@ sudo -u $SUDO_USER ./config.sh --unattended \
   * use route tables to limits how VPCs talk to one another
   * works with Direct connect as well as VPN connections
   * support multicast (not supported by any other service)
+* Common DNS record types:
+  * SOA record - stores information about:
+    * name of server that supplied the data for the zone
+    * administrator of the zone
+    * current version of the data file
+    * default nuber of seconds for the time-to-live on resource records
+  * NS record - name server record:
+    * used by top-level domain servers to direct traffic to the content DNS server that contains the authoritative DNS records
+  * A record - address:
+    * translate name of the domain to IP address
+  * CNAME - canonical name:
+    * used to resolve one domain name to another
+    * cannot be used for naked domain names (zone apex record) (DNS record at the root of a DNS zone)
+  * Alias record:
+    * map resource records sets in hosted zone to load balancers, CloudFront distributions or S3 buckets
+    * work like CNAME
+    * can be used for a naked domain name
+* Route 53 - Amazon DNS service
+* 7 routing policies for Route 53:
+  * simple routing
+  * weighted routing
+  * latency-based routing
+  * failover routing
+  * geolocation routing
+  * geoproximity routing (traffic-flow only)
+  * multivalue answer routing
+* Health checks:
+  * set for individual records
+  * if record set fails health check, it will be removed from Route 53 until passes health check
+  * SNS notification can be used to alter about failed checks
 
 TODO - page 557, router 53
 
