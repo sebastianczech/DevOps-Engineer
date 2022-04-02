@@ -1062,8 +1062,39 @@ sudo -u $SUDO_USER ./config.sh --unattended \
     * 1 network ACL can be use in many subnets
   * block IP address using network ACL, not security groups
   * stateless
+* Direct connect - cloud service that makes easy to establish dedicated network connection from your premises to AWS
+  * dedicated connection  (physical connection)
+  * hosted connection (provision by AWS partner)
+* VPC endpoint:
+  * enable connect VPC to supported AWS services
+  * virtual device
+  * traffic between VPC and other services doesn't leave Amazon network
+  * instance in VPC do not require public IP to communicated with other services
+  * types:
+    * interface endpoints - elastic network interface with private IP address
+    * gateway endpoints - virtual device you provision (e.g. for S3, DynamoDB)
+* Multiples VPCs
+  * VPC peering
+    * allows to connect 1 VPC with anothet via direct network route using private IP 
+    * transitive peering not supported (always hub-and-spoke model)
+    * can be between regions
+    * no overlapping CIDR address ranges
+  * Open VPC to Internet
+  * PrivateLink:
+    * no route tables, NAT gateways, internet gateways
+    * require network load balancer on service VPC and ENI (elastic network interface) on customer VPC
+    * used when hundreds of VPCs
+* VPC CloudHub:
+  * connect multiple sites, each with its own VPN connection
+  * operates on public internet, but it's encrypted
+* Transit Gateway:
+  * connects VPCs and on-premises networks through central hub
+  * cloud router
+  * use route tables to limits how VPCs talk to one another
+  * works with Direct connect as well as VPN connections
+  * support multicast (not supported by any other service)
 
-TODO - page 476, NAT gateway
+TODO - page 557, router 53
 
 ## Kubernetes
 
