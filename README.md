@@ -1018,7 +1018,7 @@ sudo -u $SUDO_USER ./config.sh --unattended \
   * multi-region redundancy for disaster recovery or high availability
   * no application rewrites
   * replication latens < 1s
-* VPC - virtual data center in cloud
+* VPC (virtual private cloud) - virtual data center in cloud
   * control of virtual network, IP address range, subnets, route tables, network gateways
 * Network - tiers:
   * Web - public facing subnet
@@ -1038,12 +1038,30 @@ sudo -u $SUDO_USER ./config.sh --unattended \
           * Private subnet (10.0.2.0/24)
             * Security group
               * Instance
+              * Instance2 -> NAT gateway (in public subnet) -> Network ACL -> Route table -> Internet Gateway
 * Default VPC:
   * all subnets have a route out to the Internet
   * each EC2 instance has both public and private IP address
 * Custom VPC:
   * fully customizable
 * 1 subnet is always in 1 AZ
+* NAT gateway - enable instance in private network to connect to the internet or other AWS services while preventing internet to initiate connection with those instances
+  * reduntant inside AZ
+  * from 5 to 45 Gpbs
+  * not associated with security groups
+  * automatically assigned public IP
+  * no need to patch
+* Security group - virutal firewall for EC2 instance. 
+  * by default everything is blocked.
+  * stateful - after sending request, response traffic is allowed regardles of inbound security group rules
+* Network ACL - first line of defense
+  * optional layer of security for VPC that acts as firewall for controlling traffic in/out of 1 or more subnets
+  * default network ACL - by default it allows all outbound and inboud traffic
+  * custom network ACL - by default it denies all outbound and inboud traffic
+  * each subnet in VPC has 1 network ACL (custom or default network ACL)
+    * 1 network ACL can be use in many subnets
+  * block IP address using network ACL, not security groups
+  * stateless
 
 TODO - page 476, NAT gateway
 
