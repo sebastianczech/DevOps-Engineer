@@ -1001,8 +1001,26 @@ sudo -u $SUDO_USER ./config.sh --unattended \
   * in memory cache
   * 10x performance
   * request time miliseconds -> microseconds
+* ACID:
+  * Atomic - all changes are performed successfully or nothing is changed
+  * Consistent - data in consistent before and after transaction
+  * Isolated - no process can change data while transaction is running
+  * Durable - Changes made by transaction must persist
+* PITR - point in time recovery
+  * protects againts accidental writes or deletes
+  * restore in any point in last 35 days
+  * incremental backups
+  * not enabled by default
+* Stream - time-ordered sequence of item-level changes in table
+  * stored for 24 hours
+* Multi-master, multi-region replication
+  * based on streams
+  * multi-region redundancy for disaster recovery or high availability
+  * no application rewrites
+  * replication latens < 1s
+* 
 
-TODO - page 335, EFS
+TODO - page 457, VPC
 
 ## Kubernetes
 
