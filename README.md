@@ -943,6 +943,26 @@ sudo -u $SUDO_USER ./config.sh --unattended \
   * create a copy of snapshot with encrypt option
   * create AMI from encrypted snaphsot
   * use AMI to launch encrypted instance 
+* EFS - elastic file system - managed NFS (NFSv4 protocol)
+  * 1000 concurrent connections
+  * 10 Gbps
+  * Petabytes
+  * Performance: 
+    * general purpose
+    * max I/O
+* Storage Tiers:
+  * standard
+  * infrequently accessed
+* FSx for Windows - native Microsoft Windows file system
+* FSx for Lustre - Linux file system, can store data directly on S3
+* Storage options:
+  * S3 - serverless object store
+  * Glacier - archiving
+  * EFS - NFS for Linux instances
+  * FSx for Windows
+  * FSx for Lustre
+  * EBS volume - persistent storage for EC2
+  * Instance Store - ephemeral storage for EC2
 
 TODO - page 335, EFS
 
