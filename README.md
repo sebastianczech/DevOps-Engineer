@@ -927,12 +927,15 @@ sudo -u $SUDO_USER ./config.sh --unattended \
   * consistent, so stop instance is recommended
   * encrypted if volume encrypted
   * sharing in region
+* Volumes exists on EBS, snapshots exist on S3
+* Resize EBS and change type on the fly
 * AMI - Amazon Machine Image - provided when you launch instance:
   * region
   * OS
   * architecture (32b, 64b)
   * launch permissions
   * storage
+* AMI - blueprint for EC2 instance
 * AMI categories:
   * Amazon EBS (volume from snapshot)
     * can be stopped
@@ -963,6 +966,19 @@ sudo -u $SUDO_USER ./config.sh --unattended \
   * FSx for Lustre
   * EBS volume - persistent storage for EC2
   * Instance Store - ephemeral storage for EC2
+* AWS Backup - for EC2, EBS, EFS, Amazon FSx for Lustre & Windows, AWS Storage Gateway
+* RDS - relational database service:
+  * Microsoft SQL server
+  * Oracle
+  * MySQL
+  * PostgreSQL
+  * MariaDB
+  * Amazon Aurora
+* RDS used for OLTP (online transaction processing), not suitable for OLAP (online analytical processing (analyze historical data))
+* With Multi-AZ RDS create an exact copy of production databse in anothe AZ
+* AWS handles replication
+* RDS will automatically failover to the standby during failure
+* Multi-AZ is for disaster recovery, not for improving performance (cannot connect to standby if primary is active)
 
 TODO - page 335, EFS
 
