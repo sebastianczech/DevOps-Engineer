@@ -992,6 +992,15 @@ sudo -u $SUDO_USER ./config.sh --unattended \
   * Aurora - 15 read replicas
   * MySQL, PostgreSQL - 5
 * Aurora Serverless - infrequent, intermittent or unpredictable workloads
+* DynamoDB - fast and flexible NoSQL database
+  * stored on SSD
+  * 3 geographically distinct data centers
+  * eventually consitent reads (default)
+  * strongly consisten reads
+* DynamoDB Accelerator (DAX)
+  * in memory cache
+  * 10x performance
+  * request time miliseconds -> microseconds
 
 TODO - page 335, EFS
 
