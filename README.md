@@ -982,6 +982,16 @@ sudo -u $SUDO_USER ./config.sh --unattended \
 * Read replicas (up to 5) - improve performance. It's read-only copy of primary database. It can be cross-AZ or cross-region
 * Each read replica has its own DNS endpoint and can be promoted to theit own databases (it breaks replication)
 * Read replicas requires automatic backup
+* Amazon Aurora - MySQL and PostgreSQL compatible relational database engine (5x performance vs MySQL, 3x vs PostgreSQL)
+  * 10 GB -> 128 TB
+  * up to 96 vCPUs
+  * up to 768 GB memory
+  * 2 copies in AZ, minimum 3 availability zones (6 copies of data)
+  * automated backups
+* Aurora replicas
+  * Aurora - 15 read replicas
+  * MySQL, PostgreSQL - 5
+* Aurora Serverless - infrequent, intermittent or unpredictable workloads
 
 TODO - page 335, EFS
 
