@@ -1018,9 +1018,34 @@ sudo -u $SUDO_USER ./config.sh --unattended \
   * multi-region redundancy for disaster recovery or high availability
   * no application rewrites
   * replication latens < 1s
-* 
+* VPC - virtual data center in cloud
+  * control of virtual network, IP address range, subnets, route tables, network gateways
+* Network - tiers:
+  * Web - public facing subnet
+  * Application - private subnet, can speak to web tier and database tier
+  * Database - private subnet, can only speak to application tier
+* Region:
+  * VPC (10.0.0.0/16)
+    * Internet gateway
+      * Route table:
+        * Network ACL
+          * Public subnet (10.0.1.0/24)
+            * Security group
+              * Instance
+    * Virtual Private Gateway
+      * Route table
+        * Network ACL
+          * Private subnet (10.0.2.0/24)
+            * Security group
+              * Instance
+* Default VPC:
+  * all subnets have a route out to the Internet
+  * each EC2 instance has both public and private IP address
+* Custom VPC:
+  * fully customizable
+* 1 subnet is always in 1 AZ
 
-TODO - page 457, VPC
+TODO - page 476, NAT gateway
 
 ## Kubernetes
 
