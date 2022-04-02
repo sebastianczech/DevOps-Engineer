@@ -979,6 +979,9 @@ sudo -u $SUDO_USER ./config.sh --unattended \
 * AWS handles replication
 * RDS will automatically failover to the standby during failure
 * Multi-AZ is for disaster recovery, not for improving performance (cannot connect to standby if primary is active)
+* Read replicas (up to 5) - improve performance. It's read-only copy of primary database. It can be cross-AZ or cross-region
+* Each read replica has its own DNS endpoint and can be promoted to theit own databases (it breaks replication)
+* Read replicas requires automatic backup
 
 TODO - page 335, EFS
 
