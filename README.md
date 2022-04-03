@@ -1537,6 +1537,30 @@ sudo -u $SUDO_USER ./config.sh --unattended \
   * security
   * fault tolerance
   * service limits
+* Move data to AWS - how ?:
+  * Internet
+  * Direct Connect
+  * Physical
+* Snow Family - sets of secure appliances that provide peta-byte scale data collection and processing solutions at the edge and migrate large-scale data into and out AWS
+  * Snowcone:
+    * 8 TB data
+    * 4 GB RAM
+    * 2 vCPU
+  * Snowball Edge:
+    * 48-81 TB data
+  * Snowmobile
+    * 100 PB storage
+* Storage Gateway - hybrid cloud storage service that helps to merge on-premises resources with the cloud
+  * run locally as a VM on-premises
+* File Gateway - NFS or SMB mount, caching local files
+* Volume Gateway - backup drives, iSCSI mount, EBS snapshots
+* Tape Gateway - ditch the tapes
+* AWS DataSync - agent-based solution to migrate on-premise storage to AWS (via NFS, SMB). It's a migration service
+  * EFS and FSx are viable locations for DataSync
+* AWS Transfer Family - allows to move files in and out S3 of EFS using SFTP, FTPS and FTP
+* Migration Hub - single place to track the progress of migration to AWS. Integrates with SMS (Server Migration Service) and DMS (Database Migration Serice):
+  * SMS - schedule, upload, convert, create AMI
+  * DMS - AWS Schema Conversion Tool, AWS Database Migration Service
 
 ## Kubernetes
 
