@@ -1215,7 +1215,32 @@ sudo -u $SUDO_USER ./config.sh --unattended \
   * provisioned (predictiable workload)
   * on-demand (sporadic)
 * Switching pattern for non-relational database possible after 24 hours
-
+* Decouple workflow:
+  * Simple Queue Service (SQS)
+  * Simple Notification Service (SNS)
+  * API Gateway
+* Never tightly couple
+* SQS: 
+  * poll-based messaging
+  * messaging queue that allows asynchronous processing of work
+  * delivery delay - from 0 (default) to 15 minutes
+  * message size < 256 KB of text
+  * encrypted by default
+  * message retention - 4 days (from 1 minute to 14 days)
+  * long polling isn't the default 
+  * queue depth can be a trigger for autoscalling
+* Dead-letter queue - the best sideline. Used when problems with a message in SQS.
+  * DLQs are just SQS queue that are set to receive the reject messages
+  * you can create SQS DLQ for SNS topics
+* SQS message ordering:
+  * standard:
+    * best-effort
+    * duplicate messages
+    * nearly unlimited transactions / second
+  * FIFO:
+    * guaranteed ordering
+    * no message duplication
+    * 300 messages / second
 
 TODO - page 713, cloudwatch
 
