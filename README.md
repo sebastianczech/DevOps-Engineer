@@ -1452,8 +1452,91 @@ sudo -u $SUDO_USER ./config.sh --unattended \
 * AWS Certificate Manager - allows to create, manage and deploy public and private SSL certificates for use with other AWS services
   * benefits - cost, easy setup, automated renewals and deployments
   * integrates with ELB, CloudFront, API Gateway
-
-TODO - page 954, shield
+* Automation:
+  * CloudFormation:
+    * create immutable architecture
+    * cross-region
+    * it's just API calls
+    * incase of error, rollback to last known state
+  * Elastic Beanstalk:
+    * PaaS
+    * bring your code and that's it
+    * it's creating and managing EC2 architecture
+    * it's not serverless
+  * Systems Manager:
+    * suite of tools to view, control and automate both AWS architecture and on-premises resources
+* AWS caching options:
+  * CloudFront:
+    * fast CDN
+    * uses AWS edge locations
+    * settings:
+      * security
+      * global distributions
+      * expiring content (TTL)
+      * endpoint support (not only for AWS applications)
+    * the only option to add HTTP(s) to a static website hosted on S3 bucket
+  * ElastiCache:
+    * managed version of 2 open-source technologies:
+      * Memcached:
+        * simple database caching solution
+        * not a database
+        * no failover or multi-AZ support
+        * no backups
+      * Redis:
+        * supported as a caching solution
+        * functions as a standalone database
+        * failover and multi-AZ support
+        * support backups
+  * DAX:
+    * DynamobDB accelerator
+    * in-memory cache
+    * location (lives inside VPC)
+  * Global Accelerator:
+    * networking service which sends users traffic through AWS global network infra
+    * increase performance
+    * help to deal with IP caching
+    * mask complex architecture
+* AWS organization - free governence tool that allows you to creaete and manage multiple AWS accounts
+* SCP - service control policies - way to restrict permissions and apply to the root account
+* Logs and SCP - use organization to centralize logs and SCPs to restrict anyone from making changes to them
+* AWS RAM (Resource Access Manager) - free service to share AWS resources with other accounts in organization:
+  * transit gateways
+  * license manager
+  * VPC subnets
+  * router 53 resolver
+  * dedicated hosts 
+  * ...
+* RAM vs. VPC Peering:
+  * share resources in same region -> RAM
+  * share accross regions -> VPC Peering
+* Identity Federation - on premise, AWS
+* AWS SSO - user identities, universal hooks, compatiblity 
+  * fronts of AD or AD-like
+  * manage user access
+* Cognito - mobile authentication tool - user pools, federations, access control
+  * Facebook, Google and Amazon sign-in support
+  * external users
+* Cross-Account Role Access - set up temporary access you can easily control
+  * preffered rather than IAM users
+* AWS Config - inventory management and control tool:
+  * show history of infra
+  * create rule to make sure that it conforms best practicies
+  * config = standards
+* AWS Directory Service - fully managed AD - 2 types:
+  * Managed Microsoft AD
+  * AD Connector
+* Cost Explorer - tool to visualize cloud costs. Can generate report based on resource tags
+* AWS Budget - allows to plan and set expectations around cloud costs. Allows to create alerts. 4 types of budget:
+  * cost budget
+  * usage budget
+  * reservation budget
+  * saving plans budget
+* AWS Trusted Advisor - best-practice auditing tool. Scan 5 different parts of your account:
+  * cost optimizations
+  * performance
+  * security
+  * fault tolerance
+  * service limits
 
 ## Kubernetes
 
