@@ -1147,6 +1147,75 @@ sudo -u $SUDO_USER ./config.sh --unattended \
 * If you need IPv4 address of end user, use X-Forwarded-For
 * If sticky sessions enabled and EC2 instance is down, LB continues direct traffic to that EC2 until you disable sticky session
 * Deregistration delay - allows LB to keep existing connections open if EC2 instance are deregistered or become unhealthy - this enable LB to complete in-flight requests made to that instances.
+* CloudWatch - moniotoring and observability platform:
+  * system metrics
+  * application metrics
+  * alarms
+* Metrics:
+  * default:
+    * CPU utilization
+    * network throughput
+  * custom:
+    * EC2 memory utilization
+    * EBS storage capacity
+* Standar metric delivery is every 5 minutes. Monitoring delivers data every 1 minute
+* CloudWatch logs is the place for logs
+* SQL ? CloudWatch Logs Insights
+* Real time means Kinesis
+* Horizontal vs vertical scalling
+* 3 W's of scalling - what, where, when
+* Launch template specifies settings that go into building EC2 instance. It supports versioning. More granularity. AWS recommended. 
+* Launch configuration is only for autoscalling. Immutable. Limited config options. Do not use.
+* Launch template includes:
+  * AMI
+  * EC2 instance size
+  * security groups
+  * (optional)networking settings
+* User data can be include in launch template or configurations
+* Auto scalling groups - contains collections of EC2 instances that are treated as collective groups for purposes of scalling and maangement
+* Steps: 
+  * define launch template
+  * pick networking
+  * ELB configuration
+  * set scalling policies
+  * SNS notifications
+* Restrictions:
+  * min
+  * max
+  * desired
+* Auto scalling is vital to create high available application
+* Auto scalling is only for EC2
+* Remember to spread resources out over multuple AZ and use LB
+* Instance:
+  * warm-up - stop instance from being places behind LB
+  * cool down - pause auto-scalling for set amount of time
+  * avoid trashing - create instance quickly and spin then down slowly
+* Scalling types:
+  * reactive scalling
+  * scheduled scalling
+  * predictive scalling (use ML)
+* Auto scalling policies:
+  * scale out aggresssively
+  * scale in conservatively 
+  * provisioning time
+  * costs minize 
+  * CloudWatch for alerting
+* Scalling relational database - 4 types:
+  * vertical scalling (resize database)
+  * scalling storage
+  * read replicas
+  * Aurora Serverless (offload scalling to AWS)
+* RDS scalling:
+  * read replicas
+  * multi-AZ
+  * careful with storage
+  * vertical scalling
+  * Aurora everything
+* Scalling is easy when using DynamoDB:
+  * provisioned (predictiable workload)
+  * on-demand (sporadic)
+* Switching pattern for non-relational database possible after 24 hours
+
 
 TODO - page 713, cloudwatch
 
