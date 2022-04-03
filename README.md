@@ -1289,6 +1289,13 @@ sudo -u $SUDO_USER ./config.sh --unattended \
 * SQS vs Kinesis:
   * SQS is message broker, without realtime
   * Kinesis is more complicated, used in big data and provides realtime
+* Athena - interactive query service that make easy to analyze data in S3 using SQL (serverless SQL)
+* Glue - serverless data integration service that make easy to discover, prepare and combine data (like ETL)
+* QuickSight - business inteligence (BI) data visualitzation service, allows to create dashboards
+* Amazon S3 -> AWS Glue crawlers -> AWS Glue data catalog -> Amazon Athena -> Amazon QuickSight
+* Amazon S3 -> AWS Glue crawlers -> AWS Glue data catalog -> Amazon Redshift Spectrum
+* Amazon Elasticsearch - fully managed version of open-source application Elasticsearch
+* Elasticsearch loves logs
 
 TODO - page 713, cloudwatch
 
