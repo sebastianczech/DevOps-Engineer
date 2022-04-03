@@ -1123,8 +1123,32 @@ sudo -u $SUDO_USER ./config.sh --unattended \
   * set for individual records
   * if record set fails health check, it will be removed from Route 53 until passes health check
   * SNS notification can be used to alter about failed checks
+* ELB - elastic load balancing - distribute incoming traffic into multiples targets, can be done across multiple AZs:
+  * application LB:
+    * best suited for HTTP(s) 
+    * layer 7
+    * intelligent LB
+  * network LB:
+    * layer 4
+    * performance LB
+  * classic LB:
+    * legacy e.g. X-Forwarded-For, sticky sessions
+    * classic dev/test LB
+    * 504 error message means gateway has timeoud out
+* LB resumes routing requests to instance when it has benn restored to a healthy state
+* Listener checks connection requests from clients, using protocol and port you configure
+* Rule determine how LB route requests to targets (rule = priority + action(s) + condition(s))
+* Target group = 1 or more targets (protocol + port)
+* APP LB -> Listener (with rules) -> Target(s) (Target group) -> Health check
+* Network LB:
+  * protocols: TCP, UDP, TLS, TCP_UDP
+  * ports: 1-65535
+  * can decrypt traffic, if you install certificate
+* If you need IPv4 address of end user, use X-Forwarded-For
+* If sticky sessions enabled and EC2 instance is down, LB continues direct traffic to that EC2 until you disable sticky session
+* Deregistration delay - allows LB to keep existing connections open if EC2 instance are deregistered or become unhealthy - this enable LB to complete in-flight requests made to that instances.
 
-TODO - page 557, router 53
+TODO - page 713, cloudwatch
 
 ## Kubernetes
 
