@@ -1296,6 +1296,44 @@ sudo -u $SUDO_USER ./config.sh --unattended \
 * Amazon S3 -> AWS Glue crawlers -> AWS Glue data catalog -> Amazon Redshift Spectrum
 * Amazon Elasticsearch - fully managed version of open-source application Elasticsearch
 * Elasticsearch loves logs
+* Serverless:
+  * Lambda - run functions:
+    * AWS serverless compute servie that allows run code without provisioning or managing the servers
+  * Fargate - run containers
+* Lambda - build a function:
+  * select runtime
+  * permissions - attach role e.g. to make AWS API call
+  * networking - define VPC, subnet and security groups (optional)
+  * resources - define CPU, RAM
+  * trigger (S3, Kinesis, EeventBridge)
+* Lambada limits:
+  * <10 GB RAM
+  * 15 minutes runtime
+* Amazon EventBridge (CloudWatch Events) - serverless event bus, glue that holds serverless appliaction together
+* Create a rule:
+  * define a pattern
+  * select event bus
+  * select target (Lambda, SQS, ...)
+  * tag
+  * wait for event
+* Containers - where to run:
+  * ECS (elastic container service)
+    * proprietary AWS
+    * simple
+  * EKS (elastic Kubernetes service)
+    * open-source
+    * complex
+* Fargate - serverless compute engine for containers that works with both ECS and EKS:
+  * AWS owns and manage infrastructure
+  * requires use of ECS or EKS
+  * linux-only workloads
+  * more expensive but easier to use than EC2
+* Fargate:
+  * more consisten workloads
+  * greate level of control by developers (Docker)
+* Lambda:
+  * unpredictable of inconsistent workload
+  * single function
 
 TODO - page 713, cloudwatch
 
