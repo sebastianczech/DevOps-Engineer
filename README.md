@@ -1334,8 +1334,26 @@ sudo -u $SUDO_USER ./config.sh --unattended \
 * Lambda:
   * unpredictable of inconsistent workload
   * single function
+* DDoS - distributed denial of service
+* Layer 4 DDoS = SYN flood
+* Amplification attack - attacker sends third-party server (e.g. NTP) a request using spoofed IP address and then our application is sending answer, sometimes with big size
+* Layer 7 attack - flood of GET/POST requests
+* AWS CloudTrail - increase visibility into your user and resource activity by recording AWS management console actions and API calls
+  * you can identify which user and account called AWS 
+  * CCTV monitoring for AWS account
+  * loggeed:
+    * metadata around API calls
+    * identity of API caller
+    * time of the API call
+    * source IP
+    * request params
+    * response elements
+  * after-fact incident investigation
+  * near-real-time
+  * industry and regulatory compliance
+  * stores logs in S3
 
-TODO - page 713, cloudwatch
+TODO - page 954, shield
 
 ## Kubernetes
 
