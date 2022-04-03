@@ -1241,6 +1241,24 @@ sudo -u $SUDO_USER ./config.sh --unattended \
     * guaranteed ordering
     * no message duplication
     * 300 messages / second
+* SNS:
+  * push-based messaging
+  * deliver message to endpoints subscribed to it
+  * subscribers:
+    * Kinesis Data Firehose
+    * SQS
+    * Lamba
+    * email
+    * HTTP(s)
+    * SMS
+    * application endpoint
+  * message size < 256 KB of text
+  * DLQ support (in SQS)
+  * FIFO (only for SQS as a subscriber) or standard
+  * encryption by default
+  * access policy (like in S3)
+* Alerts == SNS
+* SNS will only retry HTTP(s) endpoints
 
 TODO - page 713, cloudwatch
 
