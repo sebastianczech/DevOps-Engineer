@@ -1241,6 +1241,7 @@ sudo -u $SUDO_USER ./config.sh --unattended \
     * guaranteed ordering
     * no message duplication
     * 300 messages / second
+* Queues aren't bidirectional
 * SNS:
   * push-based messaging
   * deliver message to endpoints subscribed to it
@@ -1259,6 +1260,14 @@ sudo -u $SUDO_USER ./config.sh --unattended \
   * access policy (like in S3)
 * Alerts == SNS
 * SNS will only retry HTTP(s) endpoints
+* API Gateway - full managed service allows to publish, create, maintain, montior and secure you API. 
+  * security e.g. WAF
+  * stop abuse (e.g. DDoS protection)
+  * easy to use
+  * versioning of API
+* client -> Amazon CloudFront -> Amazon API Gateway -> AWS Lambda -> Amazon Aurora
+* client -> Amazon CloudFront -> Amazon S3
+* API Gateway - safe fron door for application
 
 TODO - page 713, cloudwatch
 
