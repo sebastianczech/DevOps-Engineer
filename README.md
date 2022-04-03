@@ -1268,6 +1268,27 @@ sudo -u $SUDO_USER ./config.sh --unattended \
 * client -> Amazon CloudFront -> Amazon API Gateway -> AWS Lambda -> Amazon Aurora
 * client -> Amazon CloudFront -> Amazon S3
 * API Gateway - safe fron door for application
+* 3 V's of Big Data:
+  * volume
+  * variety
+  * velocity (speed)
+* Redshift - petabyte-scale data warehouse service. Large relational database.
+  * up to 16 PB
+  * SQL
+* EMR - Elastic MapReduce
+* ETL - extract -> transform -> load
+* EMR allows to process data using open-source tools like: Spark, Hive, HBase, Flink, Hudi and Presto
+* EMR is an open-source cluster
+* EMR is managed fleet of EC2 instances running open-source tools
+  * EC2 rules apply
+  * VPC
+* Kinesis - allows to ingest, process and analyze real-time streaming data. Huge data-highway. 2 types:
+  * Data Streams - real-time streaming for ingesting data. You are responsible to create consumer and scalling stream
+  * Data Firehose - data transfer tool to get information to S3, Redshift, Elasticsearch or Splunk. It's near real time(<60 seconds). Plug and play (automatin scalling)
+* Kinesis Data Analytics is using SQL, connect to Data Firehose or Data Streams. Fully managed. Cost only for data passes through.
+* SQS vs Kinesis:
+  * SQS is message broker, without realtime
+  * Kinesis is more complicated, used in big data and provides realtime
 
 TODO - page 713, cloudwatch
 
