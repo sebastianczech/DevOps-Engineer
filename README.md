@@ -1352,6 +1352,106 @@ sudo -u $SUDO_USER ./config.sh --unattended \
   * near-real-time
   * industry and regulatory compliance
   * stores logs in S3
+* Shield - free DDoS protection
+  * protects on ELB, CloudFront and Route 53
+  * protects against SYN/UDP floods, reflection attacks, other L3/L4 attacks
+* Shield advanced:
+  * enhanced protections
+  * near real-time
+  * 24/7 DDoS response team (DRT)
+  * protects AWS bill against higher fees
+  * 3000 US / month
+* WAF - web app firewall that lets you monitor HTTP(s) requests that are forwarded to CloudFront or ALB
+  * after configuring conditions, WAF can return HTTP 403 
+  * operates on L7
+  * 3 behaviors:
+    * allow all except ones you specify
+    * block all except ones you specify
+    * count the requests that match the properties you specify
+  * define conditions based on:
+    * IP
+    * country
+    * values in header
+    * presence of SQL code
+    * presence of script
+    * string in request
+* GuardDuty - threat detection service that uses ML to continuously monitor for malicious behavior  
+  * updates database of known malicious domains
+  * monitor CloudTrail logs, VPC flow logs, DNS logs
+  * automate response by CloudWatch Events or Lambda
+* Macie - uses ML and pattern matching to discover sensitive data stored in S3
+  * alerts sent to EventBridge
+  * great for HIPAA and GDPR compliance
+  * automated remediation actions using AWS services 
+* PII - personally identifiable information
+* Amazon Inspector - automated security assessment service that helps to improve security and compliance of apps deployed on AWS
+  * types of assessments:
+    * network assessment (agent not required) - ports reachable outside VPC
+    * host assessment (agent required) - vulnerable softwae (CVE), host hardening (CIS Benchmarks) and security best practices
+* Managing encryption keys - Key Management Service (KMS) and CloudSM
+* KMS - create and control encryption keys used to encrypt your data
+  * integrates with EBS, S3, RDS
+  * CMK - customer master key - logical representation of master key (key iD, create date, description, key state)
+  * HSM - hardware security module - physical computing device that safeguards and manages digital keys and performs encryption/decryption
+  * generate CMK
+    * AWS creates it
+    * import key material
+    * use from AWS CloudHSM
+  * key rotation - for automaticaly creates it's 1 year
+  * policies - manage access to AWS KMS CMK
+  * key policies (resource based policies to CMK) - all KMS CMKs have a key policy
+  * control permissions:
+    * use key policy
+    * use IAM policy
+    * use grants in combination with key policy
+* CloudHSM - cloud-based HSM that enables you to easily generate and use you own encryption keys
+  * dedicated HSM to you
+  * full control of underlaying hardware
+  * full control of users, groups, keys etc.
+  * no automatic key rotation
+* Secrets Manager - securely stores, encrypt and rotates your database credentials and other secrets
+  * disable rotation if app is using embedded credentials
+  * enable rotation is recommended
+* Parameter Store - secure, hierarchical storage for configuration data management and secrets management
+  * it's free
+  * limits:
+    * number of parameters < 10 000
+    * no key rotation
+* Temporary share S3 objects using presigned URLs 
+  * presigned URLs are valid for specific duration
+* All objects in S3 are private by default
+* Presigned cookies - provide access to multiple restricted files
+* ARN - Amazon Resource Name:
+  * ``arn:partition:service:region:account_id:``
+    * ``resource``
+    * ``resource_type/resource``
+    * ``resource_type/resource/qualifier``
+    * ``resource_type/resource:qualifier``
+    * ``resource_type:resource``
+    * ``resource_type:resource:qualifier``
+  * examples:
+    * ``arn:aws:iam::123456789012:user/test``
+    * ``arn:aws:s3:::my_awesome_bucket/image.png``
+    * ``arn:aws:dynamodb:us-east-1:123456789012:table/orders``
+    * ``arn:aws:ec2:us-east-1:123456789012:instance/*``
+* IAM policy - JSON document that defines permisions
+  * resource policy
+  * identity polcy
+  * no effect until attached
+  * list of statements
+  * each statement matches AWS API request
+  * elements of statement:
+    * ``Effect``:
+      * ``Allow``
+      * ``Deny``
+    * match based on ``Action``
+    * ``Resource``
+  * not explicitly allowed == implicitly denied
+  * explicit deny > everything else
+  * AWS joins all applicable policies
+* AWS Certificate Manager - allows to create, manage and deploy public and private SSL certificates for use with other AWS services
+  * benefits - cost, easy setup, automated renewals and deployments
+  * integrates with ELB, CloudFront, API Gateway
 
 TODO - page 954, shield
 
