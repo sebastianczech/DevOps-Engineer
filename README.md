@@ -1620,6 +1620,23 @@ sudo -u $SUDO_USER ./config.sh --unattended \
   * scalability
   * identity of components 
     * elastic IP
+* Hight availability:
+  * *everything fails all the time*
+  * fault tolerance - the more loosely your system is coupled, the more easily it scales and the more fault-tolerant it can be
+  * Recovery Time Objective (RTO) is the maximum acceptable delay between the interruption of service and restoration of service. This determines what is considered an acceptable time window when service is unavailable.
+  * Recovery Point Objective (RPO) is the maximum acceptable amount of time since the last data recovery point. This determines what is considered an acceptable loss of data between the last recovery point and the interruption of service.
+* Cloud Formation:
+  * declarative programming language for deploying AWS resources
+  * uses templates and stacks to provision resources
+  * create, update, delete set of resources as a single unit (stack)
+* AWS Lambda:
+  * fully managed compute service that runs stateless code (e.g. Go, Python) in response to an event or on a time-based interval
+  * allows you to run code without managing infrastructure like Amazon EC2 instance and auto scalling groups
+* Test Axioms:
+  * expect single AZ will never be a right answer
+  * using AWS managed services should always be preffered
+  * fault tolerant and high availbility are not the same thing
+  * expect that everything will fail at some point and design accordingly
 
 ## Kubernetes
 
