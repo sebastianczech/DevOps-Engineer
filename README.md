@@ -1562,6 +1562,65 @@ sudo -u $SUDO_USER ./config.sh --unattended \
   * SMS - schedule, upload, convert, create AMI
   * DMS - AWS Schema Conversion Tool, AWS Database Migration Service
 
+### Exam Readiness: AWS Certified Solutions Architect - Associate
+
+* Design Resilient Architecture:
+  * choose reliable/resillient storage
+  * determine how to decouple mechanism using AWS services
+  * determine how to design multi-tier architecture solution
+  * determine how to design high availability and/or fault tolerant solution
+* ECS Instance Store:
+  * ephemeral volumes (in contrast to EBS)
+  * only certain EC2 solutions
+  * fixed capacity
+  * disk type and capacity depends on EC2 instance type
+  * application-level durability
+* EBS (Elastic Block Store):
+  * different types
+  * encryption
+  * snapshots
+  * provisioned capacity
+  * independent lifecycle that EC2 instance
+  * multiple volumes striped to create large volumes
+  * types (SSD for random access, HDD for sequentional access):
+    * General Purpose SSD (gp2)
+    * Provisioned IOS SSD (io1)
+    * Throughput Optimized HDD (st1)
+    * Cold HDD (sc1)
+* EFS (Elastic File System): 
+  * file storage in AWS Cloud
+  * shared storage
+  * petabyte-scale file system
+  * elastic capacity
+  * support NFSv4 protocol
+  * compatibe with Linux-based AMIs for Amazon EC2
+* Amazon S3:
+  * consitency model
+  * distributed system (strong consitency for new objects, eventual consistency for updates)
+  * storage classes & durability - standard, standard-IA (infrequent access)
+  * encryption (data at rest) - SSE-S3, SSE-KMS, SSE-C
+  * encryption (data in transit) - HTTPS
+  * versioning
+  * access control
+  * mutli-part upload
+  * internet-API accessible
+  * virtually unlimited capacity
+  * regional availability 
+  * highly durable - 99,999999999%
+* Amazon Glacier:
+  * data backup and archive storage
+  * vaults and archives
+  * retrievals - expedited, standard, bulk
+  * encryption
+  * amazon S3 object lifecycle policy
+  * regionally availability
+  * highly durable - 99,99999999%
+* Decouple for:
+  * health of components
+  * scalability
+  * identity of components 
+    * elastic IP
+
 ## Kubernetes
 
 ### Kubernetes po polsku
