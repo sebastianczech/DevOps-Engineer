@@ -1637,6 +1637,31 @@ sudo -u $SUDO_USER ./config.sh --unattended \
   * using AWS managed services should always be preffered
   * fault tolerant and high availbility are not the same thing
   * expect that everything will fail at some point and design accordingly
+* Design Performant Achitecture:
+  * choose performant storage and database
+  * apply caching to improve performance
+  * design solutions for elasticity and scalability
+* EBS - HDD vs SSD
+* Static content - move to S3 buckets and upload objects
+  * bucket are always tied to region
+  * bucket's name is unique
+  * pay only for what you use 
+    * GBs per month
+    * transfer out of region
+    * PUT, COPY, POST, LIST and GET requests
+  * free of charge:
+    * transfer in to Amazon S3
+    * transfer out from Amazon S3 to Amazon CloudFront or the same region
+  * Storage classes:
+    * general purpose - S3 Standard:
+      * higher availability requirements - use cross-region replication
+    * infrequently accessed data - S3 Standard - Infrequent Access:
+      * lower cost per GB stored
+      * higher cost per PUT, COPY, POST, GET requests
+      * 30-day storage minimum
+  * Lifecycle policies:
+    * allow to delete or move objects based on age e.g. S3 Standard ---30 days---> S3 Standard-IA ---60 days---> Glacier ---365 days---> Delete
+* 
 
 ## Kubernetes
 
