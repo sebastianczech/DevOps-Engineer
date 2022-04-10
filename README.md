@@ -1661,7 +1661,48 @@ sudo -u $SUDO_USER ./config.sh --unattended \
       * 30-day storage minimum
   * Lifecycle policies:
     * allow to delete or move objects based on age e.g. S3 Standard ---30 days---> S3 Standard-IA ---60 days---> Glacier ---365 days---> Delete
-* 
+* Performant storage on databases:
+  * Amazon Relational Database Service (RDS)
+    * complex transaction
+    * high durability
+    * medium to high query / write rate
+      * read replicas
+  * Amazon DynamoDB
+    * read capacity:
+      * 1 strongly consistent / second
+      * 2 eventually consisten / second
+    * write capacity:
+      * 1 per second
+  * Amazon Redshift:
+* Caching:
+  * CloudFront (CDN) (edge locations)
+    * static and dynamic content
+    * origin - S3, EC2, ELB
+    * protect private content
+    * security (e.g. WAF)
+  * ElastiCache (DB backed e.g. DynamoDB, RDS)
+    * Memcached
+    * Redis
+* Auto Scalling
+  * scalling:
+    * vertical (more CPU, memory) (scale up/down)
+    * horizontal (add instance) (scale in/out)
+  * across AZ
+  * components:
+    * launch configuration (instance type, AMI)
+    * group (min, max, desired size, ELB, healthcheck)
+    * policy (how much to scale in/out)
+  * CloudWatch metrics:
+    * CPU
+    * Network
+    * Queue size
+    * default vs custom metrics
+  * ELB (elastic load balancing)
+* Test Axioms:
+  * S3 for unstructured data
+  * cache for improving performance
+  * when and why use autoscalling 
+  * choose instance and database type
 
 ## Kubernetes
 
