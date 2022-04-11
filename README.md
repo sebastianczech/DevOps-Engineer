@@ -1703,6 +1703,46 @@ sudo -u $SUDO_USER ./config.sh --unattended \
   * cache for improving performance
   * when and why use autoscalling 
   * choose instance and database type
+* Secure architecture:
+  * secure application tiers
+  * secure data
+  * secure networking
+* Infrastructure:
+  * share responsibility model
+* Protecting AWS resources:
+  * principle of least privilege
+  * identities (AIM)
+    * IAM users
+    * roles
+    * federation
+    * web identity federation (Open ID, STS - Security Token Service)
+* VPC (virtual private cloud)
+  * organization: subnets public, private
+  * security: security groups, access control lists
+  * routing
+  * network isolation: internet gatewa, virtual private gateway, NAT gateway
+  * management
+  * bastion hosts
+* VPC connections:
+  * internet gateway -> connect to Internet
+  * virtual private gateway -> connect to VPN
+  * AWS direct connect -> dedicated pipe
+  * VPC peering -> connect to other VPCs
+  * NAT gateway -> allo internet traffic from private subnets
+* Securing data tier:
+  * data in transit (in/out AWS)
+    * SSL
+    * VPN
+    * IPsec
+  * data at rest (S3, EBS):
+    * ACL
+    * policies
+    * server-side encryption
+    * client-side encryption
+* Test Axioms:
+  * lock down the root user
+  * security groups only allow, network ACL allow explicit deny
+  * prefer IAM roles to access keys
 
 ## Kubernetes
 
