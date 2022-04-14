@@ -1743,6 +1743,44 @@ sudo -u $SUDO_USER ./config.sh --unattended \
   * lock down the root user
   * security groups only allow, network ACL allow explicit deny
   * prefer IAM roles to access keys
+* Cost-optimized:
+  * storage
+  * computer
+  * data transfer
+* Pricing overview:
+  * pay as you go
+  * pas less when you reserve
+  * pay even less per unit by using more
+* EC2 pricing factors:
+  * instance family
+  * tenance
+  * pricing options
+    * instance storage is free but is ephemeral
+* Storage pricing factors:
+  * S3
+    * storage class
+    * storage 
+    * requests
+    * data transfer
+  * EBS:
+    * volumes
+    * IOPS
+    * snapshots
+    * data transfer
+* Serverless architecture:
+  * AWS Lambda
+  * Amazon S3
+  * Amazon DynamoDB
+  * Amazon API Gateway
+  * Amazon CloudFront (costs):
+    * traffic distribution 
+    * requests
+    * data transfer out
+* Test Axioms:
+  * if you know it's going to be on, reserve it
+  * any unused CPU time is a waste of money
+  * use the most cost-effective data storage service and class
+  * determine the most cost-effective EC2 pricing model and instance type for each workload
 
 ## Kubernetes
 
