@@ -1781,6 +1781,29 @@ sudo -u $SUDO_USER ./config.sh --unattended \
   * any unused CPU time is a waste of money
   * use the most cost-effective data storage service and class
   * determine the most cost-effective EC2 pricing model and instance type for each workload
+* Operational excellence:
+  * automated system
+  * adapt to changes
+  * design pricniples:
+    * operations with code
+    * annotate documentation
+    * make frequent, small, reversible changes
+    * refine operations procedures frequently
+    * anticipate failure
+    * learn from all operational failures
+  * services:
+    * AWS Config
+    * AWS CloudFormation
+    * AWS Trusted Advisor
+    * AWS Inspector
+    * VPC Flow Logs
+    * AWS Cloud Trail
+    * AWS Cloud Watch
+* Test Axioms:
+  * IAM roles are easier and safer than keys and passwords
+  * monitor metrics across the system
+  * automate responses to metrics where appropriate
+  * provide alerts for anomalous conditions
 
 ## Kubernetes
 
